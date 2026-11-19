@@ -1,8 +1,3 @@
-# Release binaries (exceeds GitHub 100MB limit; upload to GitHub Releases)
-downloads/*.exe
-downloads/*.apk
-!downloads/.gitkeep
-
 # Temporary verification screenshots
 /before*.png
 /after*.png
