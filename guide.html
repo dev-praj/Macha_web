@@ -405,7 +405,14 @@
                       </div>
                       <img src="assets/guide/island-overview.png" alt="Macha Dynamic Island expanded interface on Windows desktop" loading="lazy" />
                     </div>
-                    <p class="media-caption">Macha's desktop island in expanded state with active companion avatar.</p>
+                    <div class="guide-screenshot-frame" style="margin-top:0.75rem;">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">compact-island.png</span>
+                      </div>
+                      <img src="assets/guide/compact-island.png" alt="Macha Dynamic Island in compact pill mode at top of screen" loading="lazy" />
+                    </div>
+                    <p class="media-caption">Expanded hub view (top) and compact pill mode (bottom).</p>
                   </div>
                 </div>
               </article>
@@ -661,13 +668,14 @@
                   </div>
 
                   <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Nixi Waveform</h4>
-                      <p class="placeholder-desc">Capture the island active waveform during push-to-talk speech or the screen crop marquee.</p>
-                      <span class="placeholder-path-badge">assets/guide/nixi-dictation.png</span>
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">nixi-dictation.png</span>
+                      </div>
+                      <img src="assets/guide/nixi-dictation.png" alt="Nixi push-to-talk active voice dictation interface in Macha" loading="lazy" />
                     </div>
-                    <p class="media-caption">Push-to-talk active voice meter and screen region capture.</p>
+                    <p class="media-caption">Push-to-talk active voice meter and dictation controls.</p>
                   </div>
                 </div>
               </article>
@@ -704,11 +712,12 @@
                   </div>
 
                   <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Vision Mode</h4>
-                      <p class="placeholder-desc">Capture webcam gesture cursor overlay and pinch detection visual.</p>
-                      <span class="placeholder-path-badge">assets/guide/vision-gestures.png</span>
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">vision-gestures.png</span>
+                      </div>
+                      <img src="assets/guide/vision-gestures.png" alt="Hand gesture tracking landmarks and vision mouse controls" loading="lazy" />
                     </div>
                     <p class="media-caption">Hand tracking landmarks and gesture detection overlay.</p>
                   </div>
@@ -746,11 +755,12 @@
                   </div>
 
                   <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Voice Calibration</h4>
-                      <p class="placeholder-desc">Capture Settings &rarr; Voice calibration meter and sensitivity sliders.</p>
-                      <span class="placeholder-path-badge">assets/guide/hey-macha-calibration.png</span>
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">hey-macha-calibration.png</span>
+                      </div>
+                      <img src="assets/guide/hey-macha-calibration.png" alt="Hey Macha wake word calibration and sensitivity settings" loading="lazy" />
                     </div>
                     <p class="media-caption">Wake word sensitivity tuning and calibration dialog.</p>
                   </div>
@@ -771,30 +781,29 @@
                   <span class="platform-pill windows">Windows Only</span>
                 </div>
 
-                <div class="feature-grid-content">
-                  <div class="feature-info">
-                    <p class="feature-lead-text">
-                      Real-time code modification watcher. During active coding or autonomous AI runs, the island ticker displays additions (<span style="color:var(--matcha-400)">+green</span>) and deletions (<span style="color:var(--coral-500)">-red</span>) as files change on disk.
-                    </p>
-                    <div class="scenario-callout">
-                      <strong>When to use:</strong> Monitor autonomous scripts or Claude Code edits. Instantly see which files were touched and jump directly to the edited line in VS Code.
+                <div class="feature-grid-content feature-grid-full">
+                  <div class="feature-info-layout">
+                    <div class="feature-info-pane">
+                      <p class="feature-lead-text">
+                        Real-time code modification watcher. During active coding or autonomous AI runs, the island ticker displays additions (<span style="color:var(--matcha-400)">+green</span>) and deletions (<span style="color:var(--coral-500)">-red</span>) as files change on disk.
+                      </p>
+                      <div class="scenario-callout">
+                        <strong>When to use:</strong> Monitor autonomous scripts or Claude Code edits. Instantly see which files were touched and jump directly to the edited line in VS Code.
+                      </div>
                     </div>
-                    <ol class="steps-list">
-                      <li>Click the <strong>Diffs</strong> tab in the expanded island.</li>
-                      <li>Observe real-time file change entries with modified line counts.</li>
-                      <li>Click <strong>Open in VS Code</strong> to open the exact file and jump directly to the edited lines.</li>
-                      <li>Review a 7-day retrospective of changes in the <strong>Weekly Recap</strong> view.</li>
-                    </ol>
-                  </div>
 
-                  <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Live Diffs Ticker</h4>
-                      <p class="placeholder-desc">Capture island diff ticker displaying file edits with additions and deletions.</p>
-                      <span class="placeholder-path-badge">assets/guide/live-diffs.png</span>
+                    <div class="feature-steps-pane">
+                      <div class="steps-heading">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <span>How to use</span>
+                      </div>
+                      <ol class="steps-list">
+                        <li>Click the <strong>Diffs</strong> tab in the expanded island.</li>
+                        <li>Observe real-time file change entries with modified line counts.</li>
+                        <li>Click <strong>Open in VS Code</strong> to open the exact file and jump directly to the edited lines.</li>
+                        <li>Review a 7-day retrospective of changes in the <strong>Weekly Recap</strong> view.</li>
+                      </ol>
                     </div>
-                    <p class="media-caption">Live file change ticker with additions and deletions breakdown.</p>
                   </div>
                 </div>
               </article>
@@ -813,30 +822,29 @@
                   <span class="platform-pill both">Windows &amp; Android</span>
                 </div>
 
-                <div class="feature-grid-content">
-                  <div class="feature-info">
-                    <p class="feature-lead-text">
-                      Pairs your Android phone to your Windows PC over local Wi-Fi via mDNS and encrypted TLS, with Cloudflare relay fallback when you're away on cellular data.
-                    </p>
-                    <div class="scenario-callout">
-                      <strong>When to use:</strong> Approve Claude Code terminal tasks from another room, sync clipboard text, receive build completion notifications, and carry your AI memories in your pocket.
+                <div class="feature-grid-content feature-grid-full">
+                  <div class="feature-info-layout">
+                    <div class="feature-info-pane">
+                      <p class="feature-lead-text">
+                        Pairs your Android phone to your Windows PC over local Wi-Fi via mDNS and encrypted TLS, with Cloudflare relay fallback when you're away on cellular data.
+                      </p>
+                      <div class="scenario-callout">
+                        <strong>When to use:</strong> Approve Claude Code terminal tasks from another room, sync clipboard text, receive build completion notifications, and carry your AI memories in your pocket.
+                      </div>
                     </div>
-                    <ol class="steps-list">
-                      <li>Open <strong>Settings &rarr; Phone Link</strong> on Windows to reveal the pairing QR code.</li>
-                      <li>Open the Macha Android companion app and tap <strong>Scan Desktop QR</strong>.</li>
-                      <li>Confirm the encrypted TLS connection pin.</li>
-                      <li>When an approval arrives, tap your phone's fingerprint sensor to approve remotely.</li>
-                    </ol>
-                  </div>
 
-                  <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Phone Sync</h4>
-                      <p class="placeholder-desc">Capture Android companion app connected state with biometric dialog.</p>
-                      <span class="placeholder-path-badge">assets/guide/android-companion-sync.png</span>
+                    <div class="feature-steps-pane">
+                      <div class="steps-heading">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <span>How to pair &amp; sync</span>
+                      </div>
+                      <ol class="steps-list">
+                        <li>Open <strong>Settings &rarr; Phone Link</strong> on Windows to reveal the pairing QR code.</li>
+                        <li>Open the Macha Android companion app and tap <strong>Scan Desktop QR</strong>.</li>
+                        <li>Confirm the encrypted TLS connection pin.</li>
+                        <li>When an approval arrives, tap your phone's fingerprint sensor to approve remotely.</li>
+                      </ol>
                     </div>
-                    <p class="media-caption">Android companion remote sync and biometric approval screen.</p>
                   </div>
                 </div>
               </article>
@@ -855,37 +863,36 @@
                   <span class="platform-pill android">Android Only</span>
                 </div>
 
-                <div class="feature-grid-content">
-                  <div class="feature-info">
-                    <p class="feature-lead-text">
-                      The Macha Android app includes ten specialized home screen widgets plus a Quick Settings tile for instant voice dictation directly from your notification tray.
-                    </p>
-                    <div class="scenario-callout">
-                      <strong>When to use:</strong> Add <em>Macha Big</em> or <em>Status Pill</em> to your home screen to check pending approvals and active agent status without launching the app.
+                <div class="feature-grid-content feature-grid-full">
+                  <div class="feature-info-layout">
+                    <div class="feature-info-pane">
+                      <p class="feature-lead-text">
+                        The Macha Android app includes ten specialized home screen widgets plus a Quick Settings tile for instant voice dictation directly from your notification tray.
+                      </p>
+                      <div class="scenario-callout">
+                        <strong>When to use:</strong> Add <em>Macha Big</em> or <em>Status Pill</em> to your home screen to check pending approvals and active agent status without launching the app.
+                      </div>
                     </div>
-                    <ol class="steps-list">
-                      <li>Long-press an empty area on your Android home screen and select <strong>Widgets</strong>.</li>
-                      <li>Scroll to <strong>Macha</strong> to browse the 10 widgets:
-                        <ul style="padding-left:1.2rem;margin-top:0.4rem;display:flex;flex-direction:column;gap:0.25rem;">
-                          <li><strong>Macha at a Glance:</strong> Avatar mood &amp; active status.</li>
-                          <li><strong>Approvals Waiting:</strong> Direct tap-to-approve badge.</li>
-                          <li><strong>Agents Summary:</strong> Active background tasks overview.</li>
-                          <li><strong>Macha Big (4x3):</strong> Interactive mascot companion.</li>
-                          <li><strong>Plan Usage &amp; Finished Today:</strong> Token &amp; task counters.</li>
-                        </ul>
-                      </li>
-                      <li>Swipe down your notification shade and edit tiles to add the <strong>Macha Quick Dictation</strong> tile.</li>
-                    </ol>
-                  </div>
 
-                  <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Android Widgets</h4>
-                      <p class="placeholder-desc">Capture Android home screen with Macha Big, Status Pill, and Quick Tile.</p>
-                      <span class="placeholder-path-badge">assets/guide/android-widgets.png</span>
+                    <div class="feature-steps-pane">
+                      <div class="steps-heading">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <span>How to add widgets</span>
+                      </div>
+                      <ol class="steps-list">
+                        <li>Long-press an empty area on your Android home screen and select <strong>Widgets</strong>.</li>
+                        <li>Scroll to <strong>Macha</strong> to browse the 10 widgets:
+                          <ul style="padding-left:1.2rem;margin-top:0.4rem;display:flex;flex-direction:column;gap:0.25rem;">
+                            <li><strong>Macha at a Glance:</strong> Avatar mood &amp; active status.</li>
+                            <li><strong>Approvals Waiting:</strong> Direct tap-to-approve badge.</li>
+                            <li><strong>Agents Summary:</strong> Active background tasks overview.</li>
+                            <li><strong>Macha Big (4x3):</strong> Interactive mascot companion.</li>
+                            <li><strong>Plan Usage &amp; Finished Today:</strong> Token &amp; task counters.</li>
+                          </ul>
+                        </li>
+                        <li>Swipe down your notification shade and edit tiles to add the <strong>Macha Quick Dictation</strong> tile.</li>
+                      </ol>
                     </div>
-                    <p class="media-caption">Macha's Android home screen widgets and quick control tile.</p>
                   </div>
                 </div>
               </article>
@@ -904,30 +911,29 @@
                   <span class="platform-pill windows">Windows Only</span>
                 </div>
 
-                <div class="feature-grid-content">
-                  <div class="feature-info">
-                    <p class="feature-lead-text">
-                      Configure custom PowerShell scripts, command macros, and desktop shortcuts inside Macha. Trigger complex build routines or clean directories with a simple voice prompt or hotkey.
-                    </p>
-                    <div class="scenario-callout">
-                      <strong>When to use:</strong> Start a local development environment (Docker + npm run dev + redis) with a single voice command: <em>"Hey Macha, start dev stack"</em>.
+                <div class="feature-grid-content feature-grid-full">
+                  <div class="feature-info-layout">
+                    <div class="feature-info-pane">
+                      <p class="feature-lead-text">
+                        Configure custom PowerShell scripts, command macros, and desktop shortcuts inside Macha. Trigger complex build routines or clean directories with a simple voice prompt or hotkey.
+                      </p>
+                      <div class="scenario-callout">
+                        <strong>When to use:</strong> Start a local development environment (Docker + npm run dev + redis) with a single voice command: <em>"Hey Macha, start dev stack"</em>.
+                      </div>
                     </div>
-                    <ol class="steps-list">
-                      <li>Open <strong>Settings &rarr; Workflows</strong>.</li>
-                      <li>Click <strong>+ New Workflow</strong> and give it a name (e.g. <code>dev-stack</code>).</li>
-                      <li>Write your PowerShell script in the built-in editor.</li>
-                      <li>Assign a trigger keyword (e.g. <em>"start dev stack"</em>) or a dedicated shortcut like <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.</li>
-                    </ol>
-                  </div>
 
-                  <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Workflows</h4>
-                      <p class="placeholder-desc">Capture Settings &rarr; Workflows showing saved PowerShell macros.</p>
-                      <span class="placeholder-path-badge">assets/guide/workflows-macro.png</span>
+                    <div class="feature-steps-pane">
+                      <div class="steps-heading">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <span>How to create workflows</span>
+                      </div>
+                      <ol class="steps-list">
+                        <li>Open <strong>Settings &rarr; Workflows</strong>.</li>
+                        <li>Click <strong>+ New Workflow</strong> and give it a name (e.g. <code>dev-stack</code>).</li>
+                        <li>Write your PowerShell script in the built-in editor.</li>
+                        <li>Assign a trigger keyword (e.g. <em>"start dev stack"</em>) or a dedicated shortcut like <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.</li>
+                      </ol>
                     </div>
-                    <p class="media-caption">Macha local workflow builder and command automation runner.</p>
                   </div>
                 </div>
               </article>
@@ -946,30 +952,29 @@
                   <span class="platform-pill windows">Windows Only</span>
                 </div>
 
-                <div class="feature-grid-content">
-                  <div class="feature-info">
-                    <p class="feature-lead-text">
-                      Integrates with Windows Global System Media Transport Controls (GSMTC). Detects active audio streams from Spotify, Chrome, iTunes, or Apple Music directly inside the island with album art and playback controls.
-                    </p>
-                    <div class="scenario-callout">
-                      <strong>When to use:</strong> Pause background music during a call or skip tracks without bringing media players to the foreground.
+                <div class="feature-grid-content feature-grid-full">
+                  <div class="feature-info-layout">
+                    <div class="feature-info-pane">
+                      <p class="feature-lead-text">
+                        Integrates with Windows Global System Media Transport Controls (GSMTC). Detects active audio streams from Spotify, Chrome, iTunes, or Apple Music directly inside the island with album art and playback controls.
+                      </p>
+                      <div class="scenario-callout">
+                        <strong>When to use:</strong> Pause background music during a call or skip tracks without bringing media players to the foreground.
+                      </div>
                     </div>
-                    <ol class="steps-list">
-                      <li>Start playing music on Spotify or your preferred Windows media player.</li>
-                      <li>Hover over the island to reveal the mini playback pill with track title and album art.</li>
-                      <li>Click the island media icons to <strong>Play</strong>, <strong>Pause</strong>, or <strong>Skip</strong>.</li>
-                      <li>System notifications appear as friendly bubble toasts anchored to the island.</li>
-                    </ol>
-                  </div>
 
-                  <div class="feature-media">
-                    <div class="guide-placeholder-frame">
-                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
-                      <h4 class="placeholder-title">Screenshot Placeholder: Media Controls</h4>
-                      <p class="placeholder-desc">Capture the island showing Spotify track title, album artwork, and controls.</p>
-                      <span class="placeholder-path-badge">assets/guide/media-controls.png</span>
+                    <div class="feature-steps-pane">
+                      <div class="steps-heading">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                        <span>How to control media</span>
+                      </div>
+                      <ol class="steps-list">
+                        <li>Start playing music on Spotify or your preferred Windows media player.</li>
+                        <li>Hover over the island to reveal the mini playback pill with track title and album art.</li>
+                        <li>Click the island media icons to <strong>Play</strong>, <strong>Pause</strong>, or <strong>Skip</strong>.</li>
+                        <li>System notifications appear as friendly bubble toasts anchored to the island.</li>
+                      </ol>
                     </div>
-                    <p class="media-caption">Integrated Windows media session controls inside the floating island.</p>
                   </div>
                 </div>
               </article>
@@ -1344,7 +1349,7 @@
                   <span>Download for Windows (.exe)</span>
                 </a>
                 <a href="downloads/Macha.apk" class="btn btn-secondary">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.64.64 0 0 0-.83.22l-1.88 3.24A10.47 10.47 0 0 0 12 8c-1.53 0-2.98.35-4.47.91L5.65 5.67a.64.64 0 0 0-.83-.22c-.3.16-.42.54-.26.85L6.4 9.48A9.995 9.995 0 0 0 2 18h20c0-3.35-1.64-6.33-4.4-8.52zM8.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm7 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
                   <span>Download for Android (.apk)</span>
                 </a>
               </div>
