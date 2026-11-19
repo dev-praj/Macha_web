@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Macha Field Guide — Getting Started & Feature Manual</title>
+  <meta name="description" content="The complete beginner's field guide to Macha. Learn how to use the desktop dynamic island, Claude Code hook, voice dictation, hand gesture vision, and paired Android companion." />
+  <meta property="og:title" content="Macha Field Guide — Getting Started & Feature Manual" />
+  <meta property="og:description" content="Comprehensive instructions and reference manual for all features in Macha." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="assets/macha-face.png" />
+  <link rel="icon" type="image/svg+xml" href="assets/macha-face.svg" />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:italic&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/guide.css" />
+</head>
+<body class="guide-body">
+
+  <!-- ==============================================================
+       STICKY NAVBAR
+  ============================================================== -->
+  <header id="navbar" class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand" aria-label="Macha home">
+        <!-- Unified Avatar Stack as Logo -->
+        <div class="avatar-stack mini" aria-hidden="true">
+          <div class="avatar-card av-cubee">
+            <svg viewBox="0 0 160 150" class="av-svg">
+              <rect x="8" y="10" width="144" height="130" rx="38" fill="#E65C5C" stroke="#0A120D" stroke-width="6"/>
+              <g class="cubee-eyes av-eyes">
+                <rect x="36" y="66" width="32" height="14" rx="7" fill="#111316"/>
+                <rect x="92" y="66" width="32" height="14" rx="7" fill="#111316"/>
+              </g>
+            </svg>
+          </div>
+          <div class="avatar-card av-onee">
+            <svg viewBox="0 0 160 150" class="av-svg">
+              <rect x="8" y="10" width="144" height="130" rx="42" fill="#DBE2F5" stroke="#0A120D" stroke-width="6"/>
+              <g class="onee-eyes av-eyes">
+                <ellipse cx="50" cy="74" rx="10" ry="18" fill="#111316"/>
+                <ellipse cx="110" cy="74" rx="10" ry="18" fill="#111316"/>
+              </g>
+            </svg>
+          </div>
+          <div class="avatar-card av-macha">
+            <svg viewBox="0 0 160 150" class="av-svg">
+              <rect x="8" y="10" width="144" height="130" rx="40" fill="#FFFDFB" stroke="#0A120D" stroke-width="6"/>
+              <g class="macha-eyes av-eyes">
+                <ellipse cx="54" cy="74" rx="13" ry="15" fill="#1A1412"/>
+                <ellipse cx="106" cy="74" rx="13" ry="15" fill="#1A1412"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <span class="nav-title">Macha</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Page sections">
+        <a href="index.html" class="nav-item">Home / Download</a>
+        <a href="#what-is-macha" class="nav-item">Overview</a>
+        <a href="#getting-started" class="nav-item">Quick Start</a>
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#settings" class="nav-item">Settings</a>
+        <a href="#shortcuts" class="nav-item">Shortcuts</a>
+        <a href="#troubleshooting" class="nav-item">Troubleshooting</a>
+        <a href="#faq" class="nav-item">FAQ</a>
+        <a href="https://github.com/dev-praj/Macha_by_Prajwal" target="_blank" rel="noopener noreferrer" class="nav-item nav-gh" aria-label="View source repository on GitHub">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#download" class="btn btn-coral btn-sm">Get Beta</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==============================================================
+       MAIN GUIDE CONTAINER
+  ============================================================== -->
+  <main class="guide-page">
+    <div class="guide-container">
+
+      <!-- Hero Header -->
+      <header class="guide-hero">
+        <div class="guide-hero-badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          User Guide &amp; Reference Manual
+        </div>
+        <h1 class="guide-hero-title">How to use <em>Macha</em></h1>
+        <p class="guide-hero-subtitle">
+          The complete beginner's field guide to the desktop dynamic island, voice dictation, hand gesture vision, and paired Android companion.
+        </p>
+
+        <!-- Quick Jump Pills -->
+        <div class="guide-quick-pills" aria-label="Jump to guide section">
+          <a href="#what-is-macha" class="quick-pill">✨ What is Macha?</a>
+          <a href="#getting-started" class="quick-pill">🚀 3-Step Setup</a>
+          <a href="#features" class="quick-pill">⚡ Features (14)</a>
+          <a href="#settings" class="quick-pill">⚙️ Settings Hub</a>
+          <a href="#shortcuts" class="quick-pill">⌨️ Shortcuts Cheatsheet</a>
+          <a href="#troubleshooting" class="quick-pill">🔧 Troubleshooting</a>
+          <a href="#faq" class="quick-pill">💬 FAQ</a>
+        </div>
+      </header>
+
+      <!-- Two-Column Layout -->
+      <div class="guide-layout">
+
+        <!-- Sticky Sidebar with Search & Table of Contents -->
+        <aside class="guide-sidebar" aria-label="Table of Contents">
+          <div class="sidebar-search">
+            <div class="search-input-wrap">
+              <svg class="search-icon-left" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              <input type="text" id="guide-search-input" class="search-input" placeholder="Search guide..." aria-label="Search guide content" />
+              <span class="search-kbd-hint">/</span>
+            </div>
+          </div>
+
+          <div class="sidebar-heading">Contents</div>
+          <nav class="toc-nav" id="toc-nav">
+            <a href="#what-is-macha" class="toc-link">
+              <span>What is Macha?</span>
+            </a>
+            <a href="#getting-started" class="toc-link">
+              <span>Get Started in 3 Steps</span>
+              <span class="toc-badge">Checklist</span>
+            </a>
+            <a href="#features" class="toc-link">
+              <span>Features, One by One</span>
+              <span class="toc-badge">14</span>
+            </a>
+            <div class="toc-subnav">
+              <a href="#feat-island" class="toc-sublink">1. Dynamic Island</a>
+              <a href="#feat-claude" class="toc-sublink">2. Claude Code Approvals</a>
+              <a href="#feat-chat" class="toc-sublink">3. Chat &amp; Memory</a>
+              <a href="#feat-file-drop" class="toc-sublink">4. File Drop</a>
+              <a href="#feat-settings" class="toc-sublink">5. Settings Hub</a>
+              <a href="#feat-greeting" class="toc-sublink">6. Startup Greeting</a>
+              <a href="#feat-nixi" class="toc-sublink">7. Nixi Dictation</a>
+              <a href="#feat-vision" class="toc-sublink">8. Vision Mode</a>
+              <a href="#feat-wake-word" class="toc-sublink">9. Hey Macha Wake Word</a>
+              <a href="#feat-diffs" class="toc-sublink">10. Live File Diffs</a>
+              <a href="#feat-phone-link" class="toc-sublink">11. Android Phone Link</a>
+              <a href="#feat-widgets" class="toc-sublink">12. Android Widgets</a>
+              <a href="#feat-workflows" class="toc-sublink">13. Local Workflows</a>
+              <a href="#feat-media" class="toc-sublink">14. Media &amp; Alerts</a>
+            </div>
+            <a href="#settings" class="toc-link">
+              <span>Settings Explained</span>
+            </a>
+            <a href="#shortcuts" class="toc-link">
+              <span>Tips &amp; Shortcuts</span>
+            </a>
+            <a href="#troubleshooting" class="toc-link">
+              <span>Troubleshooting</span>
+            </a>
+            <a href="#faq" class="toc-link">
+              <span>Frequently Asked Questions</span>
+            </a>
+            <a href="#feedback" class="toc-link">
+              <span>Beta &amp; Feedback</span>
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="guide-content">
+
+          <!-- Search Empty State -->
+          <div id="search-empty" class="search-empty" role="status" aria-live="polite">
+            <p>No guide sections matched your search query. Try terms like <em>"whisper"</em>, <em>"hotkey"</em>, <em>"claude"</em>, <em>"vision"</em>, or <em>"ollama"</em>.</p>
+          </div>
+
+          <!-- ============================================================
+               SECTION 1: WHAT IS MACHA?
+          ============================================================ -->
+          <section id="what-is-macha" class="guide-section">
+            <span class="section-eyebrow">Section 01</span>
+            <h2 class="section-title">
+              What is Macha?
+              <a href="#what-is-macha" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              Macha is an expressive, privacy-first AI companion built for developers and creators. Rather than hiding in a web tab, Macha lives directly at the top of your Windows desktop as a floating <strong>Dynamic Island</strong> and pairs seamlessly with an <strong>Android companion app</strong>. It runs local LLMs through Ollama with zero data leaving your machine, handles hands-free voice dictation, tracks webcam hand gestures, relays Claude Code terminal approvals, and features three reactive companion personalities.
+            </p>
+
+            <!-- Character Trio Cards -->
+            <div class="trio-grid">
+              <!-- Macha -->
+              <div class="avatar-guide-card card-macha">
+                <div class="av-guide-top">
+                  <div class="av-icon-bubble" style="background:#FFFDFB; border: 2px solid #E9E2DC;">
+                    <svg viewBox="0 0 160 150" class="av-svg"><rect x="8" y="10" width="144" height="130" rx="40" fill="#FFFDFB"/><g class="macha-eyes"><ellipse cx="54" cy="74" rx="13" ry="15" fill="#1A1412"/><ellipse cx="106" cy="74" rx="13" ry="15" fill="#1A1412"/></g></svg>
+                  </div>
+                  <div>
+                    <h3 class="av-guide-name">Macha</h3>
+                    <div class="av-guide-role">The Calm Thinker</div>
+                  </div>
+                </div>
+                <p class="av-guide-bio">
+                  The cream-toned lead companion. Thoughtful, patient, and precise. Macha handles deep reasoning, file diff reviews, architectural answers, and complex chat prompts.
+                </p>
+                <div class="av-badge-list">
+                  <span class="av-mini-tag">#FFFDFB Cream</span>
+                  <span class="av-mini-tag">Code Review</span>
+                  <span class="av-mini-tag">Deep Reasoning</span>
+                </div>
+              </div>
+
+              <!-- Cubee -->
+              <div class="avatar-guide-card card-cubee">
+                <div class="av-guide-top">
+                  <div class="av-icon-bubble" style="background:#FF6A57; border: 2px solid #D84330;">
+                    <svg viewBox="0 0 160 150" class="av-svg"><rect x="8" y="10" width="144" height="130" rx="38" fill="#FF6A57"/><g class="cubee-eyes"><rect x="36" y="66" width="32" height="14" rx="7" fill="#111316"/><rect x="92" y="66" width="32" height="14" rx="7" fill="#111316"/></g></svg>
+                  </div>
+                  <div>
+                    <h3 class="av-guide-name">Cubee</h3>
+                    <div class="av-guide-role">The Energetic Sprinter</div>
+                  </div>
+                </div>
+                <p class="av-guide-bio">
+                  The lively coral cube. Quick on its feet, direct, and action-oriented. Cubee manages Claude Code CLI approval alerts, terminal workflows, and rapid push-to-talk notifications.
+                </p>
+                <div class="av-badge-list">
+                  <span class="av-mini-tag">#FF6A57 Coral</span>
+                  <span class="av-mini-tag">CLI Approvals</span>
+                  <span class="av-mini-tag">Quick Actions</span>
+                </div>
+              </div>
+
+              <!-- Onee -->
+              <div class="avatar-guide-card card-onee">
+                <div class="av-guide-top">
+                  <div class="av-icon-bubble" style="background:#DBE2F5; border: 2px solid #C5D0EB;">
+                    <svg viewBox="0 0 160 150" class="av-svg"><rect x="8" y="10" width="144" height="130" rx="42" fill="#DBE2F5"/><g class="onee-eyes"><ellipse cx="50" cy="74" rx="10" ry="18" fill="#111316"/><ellipse cx="110" cy="74" rx="10" ry="18" fill="#111316"/></g></svg>
+                  </div>
+                  <div>
+                    <h3 class="av-guide-name">Onee</h3>
+                    <div class="av-guide-role">The Memory Keeper</div>
+                  </div>
+                </div>
+                <p class="av-guide-bio">
+                  The gentle lavender oval. Attentive, empathetic, and observant. Onee organizes project memories, context indexing, gentle reminders, and Android companion sync.
+                </p>
+                <div class="av-badge-list">
+                  <span class="av-mini-tag">#DBE2F5 Lavender</span>
+                  <span class="av-mini-tag">Durable Memory</span>
+                  <span class="av-mini-tag">Cross-Device Sync</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ecosystem Callout -->
+            <div class="guide-callout tip">
+              <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+              <div>
+                <strong>Local-First Architecture:</strong> Macha communicates directly with your local Ollama server over <code>http://localhost:11434</code> and runs local Whisper speech models. Your keystrokes, audio, and code never leave your private machine unless you explicitly configure an optional OpenRouter cloud API key.
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               SECTION 2: GET STARTED IN 3 STEPS
+          ============================================================ -->
+          <section id="getting-started" class="guide-section">
+            <span class="section-eyebrow">Section 02</span>
+            <h2 class="section-title">
+              Get Started in 3 Steps
+              <a href="#getting-started" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              Follow this interactive checklist to get Macha running on Windows and Android in under three minutes. Your checklist progress is saved automatically on this device.
+            </p>
+
+            <div class="checklist-card-wrap">
+              <div class="checklist-header">
+                <div class="checklist-title-box">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--matcha-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                  <strong style="color:var(--cream);font-size:1.0625rem;">Onboarding Checklist</strong>
+                </div>
+                <div style="display:flex;align-items:center;gap:1.25rem;">
+                  <span class="checklist-progress-text" id="checklist-progress-text">0 of 3 completed</span>
+                  <button type="button" class="checklist-reset-btn" id="checklist-reset-btn">Reset</button>
+                </div>
+              </div>
+
+              <div class="step-items">
+                <!-- Step 1 -->
+                <div class="step-item" data-step-id="step-1">
+                  <div class="step-check-custom" role="checkbox" aria-checked="false" tabindex="0" aria-label="Mark Step 1 complete">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number-tag">Step 1 &bull; Download &amp; Install</div>
+                    <h3 class="step-heading">Install Macha on Windows and Android</h3>
+                    <p class="step-desc">
+                      Download the Windows installer or zip archive and run <strong>Macha.exe</strong>. On Android, grab <strong>Macha.apk</strong> and tap Install. Ensure your local Ollama daemon is active if using local LLMs.
+                    </p>
+                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.5rem;">
+                      <a href="downloads/Macha.exe" class="btn btn-secondary btn-sm">Download Windows (.exe)</a>
+                      <a href="downloads/Macha.apk" class="btn btn-secondary btn-sm">Download Android (.apk)</a>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-item" data-step-id="step-2">
+                  <div class="step-check-custom" role="checkbox" aria-checked="false" tabindex="0" aria-label="Mark Step 2 complete">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number-tag">Step 2 &bull; First Launch &amp; Permissions</div>
+                    <h3 class="step-heading">Grant Microphone &amp; Camera Permissions</h3>
+                    <p class="step-desc">
+                      When launching for the first time, Windows SmartScreen may show an "Unrecognized app" banner since Macha is in active community Beta. Click <strong>More info</strong> and select <strong>Run anyway</strong>. Grant microphone access for Nixi push-to-talk voice, and camera access if you plan to use Vision hand gesture tracking.
+                    </p>
+                    <div class="step-code-chip">
+                      <span>Windows hotkey test:</span>
+                      <code>Alt + Space</code>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-item" data-step-id="step-3">
+                  <div class="step-check-custom" role="checkbox" aria-checked="false" tabindex="0" aria-label="Mark Step 3 complete">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </div>
+                  <div class="step-content">
+                    <div class="step-number-tag">Step 3 &bull; Say Hello</div>
+                    <h3 class="step-heading">Interact with the Dynamic Island</h3>
+                    <p class="step-desc">
+                      Hover your mouse over the floating island at the top center of your screen to expand it. Type your first question or hold <kbd>Right Alt</kbd> to speak. You will hear the gentle chime and see Macha, Cubee, and Onee react with lively eye blinks and smiles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               SECTION 3: FEATURES, ONE BY ONE
+          ============================================================ -->
+          <section id="features" class="guide-section">
+            <span class="section-eyebrow">Section 03</span>
+            <h2 class="section-title">
+              Features, One by One
+              <a href="#features" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              Every feature below is discovered directly from the Macha codebase. Below you will find what each feature does, practical everyday use cases, numbered step-by-step instructions, and keyboard shortcuts.
+            </p>
+
+            <div class="features-list">
+
+              <!-- Feature 1: Dynamic Island -->
+              <article class="feature-detail-card" id="feat-island">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Dynamic Island Desktop Widget</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      A sleek, hardware-accelerated floating island that sits at the top center of your Windows screen. It morphs fluidly between a discreet compact status pill (180&times;32px) and an expanded workspace hub (480&times;120px).
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Keep it running while coding or reading docs. You can glance at build notifications, track active diffs, monitor background agents, or check media without switching desktop windows.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Hover your mouse over the compact pill at the top of your screen to expand it.</li>
+                      <li>Click the companion mascot to toggle between <strong>Chat</strong>, <strong>Diffs</strong>, and <strong>Settings</strong> tabs.</li>
+                      <li>Double-click the pill or press <kbd>Esc</kbd> to collapse back to compact mode.</li>
+                      <li>Drag the island left or right if you have multiple monitors or custom top-bar taskbars.</li>
+                    </ol>
+                    <div class="guide-callout tip">
+                      <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                      <div>
+                        <strong>Pro Tip:</strong> Repeatedly clicking the avatar will cause Cubee to shake playfully and display an annoyed face, while gently hovering triggers happy eye hearts!
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">island-overview.png</span>
+                      </div>
+                      <img src="assets/guide/island-overview.png" alt="Macha Dynamic Island expanded interface on Windows desktop" loading="lazy" />
+                    </div>
+                    <p class="media-caption">Macha's desktop island in expanded state with active companion avatar.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 2: Claude Code Approvals -->
+              <article class="feature-detail-card" id="feat-claude">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Claude Code Hook &amp; Approvals Relay</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill both">Windows &amp; Android</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Integrates directly with the Claude Code CLI via <code>macha-hook.exe</code>. Whenever Claude requests permission to run bash commands, edit files, or execute tests, Macha intercepts the request and presents a clear approval banner.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Run autonomous coding sessions with Claude Code. Step away from your desk to grab tea—Macha forwards the approval prompt to your Android phone so you can approve via fingerprint!
+                    </div>
+                    <ol class="steps-list">
+                      <li>Install the hook by running <code>macha --hook install</code> or enabling it in <strong>Settings &rarr; Claude Code</strong>.</li>
+                      <li>Start Claude Code in your terminal (<code>claude</code>).</li>
+                      <li>When Claude attempts a file write or command, the desktop island turns coral and displays the command preview.</li>
+                      <li>Click <strong>Allow</strong> or <strong>Deny</strong> on desktop, or authenticate with biometrics on your Android lock screen.</li>
+                    </ol>
+                    <div class="guide-callout tip">
+                      <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                      <div>
+                        <strong>Pro Tip:</strong> Press <kbd>Y</kbd> on your keyboard to instantly approve, or <kbd>N</kbd> to deny without lifting your hands to the mouse.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">claude-approval.png</span>
+                      </div>
+                      <img src="assets/guide/claude-approval.png" alt="Claude Code CLI approval dialog inside Macha desktop island" loading="lazy" />
+                    </div>
+                    <p class="media-caption">Real-time Claude Code tool execution prompt with Deny and Allow options.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 3: Chat Interface & Memory -->
+              <article class="feature-detail-card" id="feat-chat">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Chat Interface &amp; Durable Memory</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill both">Windows &amp; Android</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      A fast, distraction-free conversational companion. Powered by local Ollama models (defaulting to <code>qwen2.5:7b</code> or <code>gpt-oss:20b</code>) with an optional OpenRouter cloud fallback for high-capacity frontier models.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Ask technical questions, brainstorm architecture, refactor code, or paste stack traces without leaving your IDE or opening a browser window.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Press <kbd>Alt</kbd> + <kbd>Space</kbd> anywhere in Windows to trigger the chat input bar.</li>
+                      <li>Type your prompt and hit <kbd>Enter</kbd>.</li>
+                      <li>Click the <strong>Screenshot</strong> icon next to the input to instantly capture your active display and attach it to the prompt.</li>
+                      <li>View durable memories stored in <strong>Settings &rarr; Memory</strong> where Macha preserves key facts across sessions.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">chat-screen.png</span>
+                      </div>
+                      <img src="assets/guide/chat-screen.png" alt="Macha desktop chat interface with code snippet formatting" loading="lazy" />
+                    </div>
+                    <p class="media-caption">Macha conversational interface with syntax-highlighted code blocks.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 4: File Drop onto Island -->
+              <article class="feature-detail-card" id="feat-file-drop">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="12" y1="18" x2="12" y2="12"></line><line x1="9" y1="15" x2="15" y2="15"></line></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">File Drop onto Island</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Drag any file from Windows File Explorer or your desktop directly over the floating island. Macha playfully morphs into an open parcel box, swallows the file with an audio chime, and enters contextual Q&amp;A mode.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Quickly analyze complex JSON configs, read crash log files, inspect PDF documents, or review code scripts without copy-pasting.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Click and drag a file (e.g. <code>server.log</code>, <code>index.ts</code>, or a PDF document).</li>
+                      <li>Hover the file cursor over the island at the top of your screen until it expands into a drop zone.</li>
+                      <li>Release the mouse button. Macha parses the file content immediately.</li>
+                      <li>Type or speak your question, such as <em>"Summarize any runtime errors in this log"</em>.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">file-drop.png</span>
+                      </div>
+                      <img src="assets/guide/file-drop.png" alt="Macha desktop island morphing into drop zone for files" loading="lazy" />
+                    </div>
+                    <p class="media-caption">Macha's reactive file drop target with automatic document ingestion.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 5: Settings Hub -->
+              <article class="feature-detail-card" id="feat-settings">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Settings Hub &amp; Provider Controls</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Central control dashboard for all Macha behavior. Configure your local Ollama connection, adjust voice dictation engines, customize global hotkeys, set up Claude Code hooks, and generate pairing QR codes.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Adjust your local LLM model from 7B to 20B, change your push-to-talk hotkey, or pair a new Android smartphone.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Click the gear icon in the expanded island or press <kbd>Alt</kbd> + <kbd>,</kbd>.</li>
+                      <li>Navigate tabs: <strong>General</strong>, <strong>Voice</strong>, <strong>Providers</strong>, <strong>Claude Code</strong>, <strong>Phone Link</strong>, and <strong>Workflows</strong>.</li>
+                      <li>Changes are applied instantly without restarting the application.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">settings-hub.png</span>
+                      </div>
+                      <img src="assets/guide/settings-hub.png" alt="Macha Settings Hub with model and provider preferences" loading="lazy" />
+                    </div>
+                    <p class="media-caption">Macha Settings Hub showing connection status and provider settings.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 6: Startup Greeting -->
+              <article class="feature-detail-card" id="feat-greeting">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Startup Greeting Ceremony</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill both">Windows &amp; Android</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      On application launch, Macha plays an authentic greeting ceremony featuring the trio avatars (Cubee, Onee, and Macha). As the avatars pop into view, they wave, blink in synchronized delight, and greet you across world languages.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Macha welcomes you every morning with a cheerful greeting, or anytime you relaunch the application.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Launch Macha from your desktop shortcut or start menu.</li>
+                      <li>Observe the animated trio avatar peek wave and listen for the authentic gentle wave audio chime.</li>
+                      <li>Watch the multi-language greeting sequence (Hello, Namaste, నమస్కారం, ನಮಸ್ಕಾರ, Hola, Bonjour, こんにちは).</li>
+                      <li>Click <strong>Skip &rarr;</strong> or press any key to enter work mode immediately.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-screenshot-frame">
+                      <div class="frame-bar">
+                        <span class="frame-dot"></span><span class="frame-dot"></span><span class="frame-dot"></span>
+                        <span class="frame-title">greeting-launch.png</span>
+                      </div>
+                      <img src="assets/guide/greeting-launch.png" alt="Macha startup greeting screen showing avatars waving" loading="lazy" />
+                    </div>
+                    <p class="media-caption">Macha startup launch animation with avatar greeting cards.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 7: Nixi Voice Dictation -->
+              <article class="feature-detail-card" id="feat-nixi">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Nixi Push-to-Talk Voice Dictation</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      High-accuracy, ultra-low latency push-to-talk speech dictation. Runs local NVIDIA Parakeet or Faster-Whisper models so your microphone audio never touches external cloud servers.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Dictate long commit messages, draft PR descriptions, comment on code, or speak complex questions directly into your editor without typing.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Hold down <kbd>Right Alt</kbd> on your keyboard. A glowing waveform appears in the island.</li>
+                      <li>Speak naturally into your microphone.</li>
+                      <li>Release <kbd>Right Alt</kbd>. Nixi instantly transcribes your speech and pastes it into your focused text cursor.</li>
+                      <li>Hold <kbd>Left Ctrl</kbd> + <kbd>Alt</kbd> to drag a screen crop box and speak a query specifically about that captured window area.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Nixi Waveform</h4>
+                      <p class="placeholder-desc">Capture the island active waveform during push-to-talk speech or the screen crop marquee.</p>
+                      <span class="placeholder-path-badge">assets/guide/nixi-dictation.png</span>
+                    </div>
+                    <p class="media-caption">Push-to-talk active voice meter and screen region capture.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 8: Vision Mode -->
+              <article class="feature-detail-card" id="feat-vision">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Vision Mode (Webcam Hand Gesture Mouse)</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Control your Windows cursor using subtle hand gestures captured by your local webcam. Built on MediaPipe hand tracking, running completely on-device without recording or cloud streaming.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Lean back during presentations, browse documents hands-free while eating lunch, or control music and windows from across the desk.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Toggle Vision Mode via the island camera icon or press <kbd>Alt</kbd> + <kbd>V</kbd>.</li>
+                      <li>Move your open hand: the mouse cursor tracks your wrist coordinate smoothly.</li>
+                      <li><strong>Left Click / Drag:</strong> Pinch your thumb and index finger together.</li>
+                      <li><strong>Right Click:</strong> Pinch your thumb and middle finger together.</li>
+                      <li><strong>Scroll:</strong> Pinch your thumb and pinky finger, moving hand up or down to scroll.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Vision Mode</h4>
+                      <p class="placeholder-desc">Capture webcam gesture cursor overlay and pinch detection visual.</p>
+                      <span class="placeholder-path-badge">assets/guide/vision-gestures.png</span>
+                    </div>
+                    <p class="media-caption">Hand tracking landmarks and gesture detection overlay.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 9: Wake Word -->
+              <article class="feature-detail-card" id="feat-wake-word">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">&ldquo;Hey Macha&rdquo; Wake Word</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill both">Windows &amp; Android</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Hands-free voice wake activation. Uses a lightweight local keyword spotting engine that continuously monitors microphone input for the phrase "Hey Macha" with minimal CPU footprint.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Ask quick questions aloud while your hands are busy on another keyboard, tablet, or physical hardware.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Open <strong>Settings &rarr; Voice</strong> and toggle on <strong>Wake Word ("Hey Macha")</strong>.</li>
+                      <li>Run the <strong>Record "Hey Macha"</strong> calibration wizard to calibrate ambient noise and your vocal tone.</li>
+                      <li>Say <em>"Hey Macha"</em> from across the room. The island wakes up with a chime.</li>
+                      <li>Speak your question. Macha responds aloud using Windows SAPI or speech synthesis.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Voice Calibration</h4>
+                      <p class="placeholder-desc">Capture Settings &rarr; Voice calibration meter and sensitivity sliders.</p>
+                      <span class="placeholder-path-badge">assets/guide/hey-macha-calibration.png</span>
+                    </div>
+                    <p class="media-caption">Wake word sensitivity tuning and calibration dialog.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 10: Live File Diffs -->
+              <article class="feature-detail-card" id="feat-diffs">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Live File Diffs &amp; Session Ticker</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Real-time code modification watcher. During active coding or autonomous AI runs, the island ticker displays additions (<span style="color:var(--matcha-400)">+green</span>) and deletions (<span style="color:var(--coral-500)">-red</span>) as files change on disk.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Monitor autonomous scripts or Claude Code edits. Instantly see which files were touched and jump directly to the edited line in VS Code.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Click the <strong>Diffs</strong> tab in the expanded island.</li>
+                      <li>Observe real-time file change entries with modified line counts.</li>
+                      <li>Click <strong>Open in VS Code</strong> to open the exact file and jump directly to the edited lines.</li>
+                      <li>Review a 7-day retrospective of changes in the <strong>Weekly Recap</strong> view.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Live Diffs Ticker</h4>
+                      <p class="placeholder-desc">Capture island diff ticker displaying file edits with additions and deletions.</p>
+                      <span class="placeholder-path-badge">assets/guide/live-diffs.png</span>
+                    </div>
+                    <p class="media-caption">Live file change ticker with additions and deletions breakdown.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 11: Android Phone Link -->
+              <article class="feature-detail-card" id="feat-phone-link">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Android Phone Link &amp; Biometric Approvals</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill both">Windows &amp; Android</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Pairs your Android phone to your Windows PC over local Wi-Fi via mDNS and encrypted TLS, with Cloudflare relay fallback when you're away on cellular data.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Approve Claude Code terminal tasks from another room, sync clipboard text, receive build completion notifications, and carry your AI memories in your pocket.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Open <strong>Settings &rarr; Phone Link</strong> on Windows to reveal the pairing QR code.</li>
+                      <li>Open the Macha Android companion app and tap <strong>Scan Desktop QR</strong>.</li>
+                      <li>Confirm the encrypted TLS connection pin.</li>
+                      <li>When an approval arrives, tap your phone's fingerprint sensor to approve remotely.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Phone Sync</h4>
+                      <p class="placeholder-desc">Capture Android companion app connected state with biometric dialog.</p>
+                      <span class="placeholder-path-badge">assets/guide/android-companion-sync.png</span>
+                    </div>
+                    <p class="media-caption">Android companion remote sync and biometric approval screen.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 12: Android Widgets -->
+              <article class="feature-detail-card" id="feat-widgets">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">10 Android Home Screen Widgets &amp; Quick Tile</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill android">Android Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      The Macha Android app includes ten specialized home screen widgets plus a Quick Settings tile for instant voice dictation directly from your notification tray.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Add <em>Macha Big</em> or <em>Status Pill</em> to your home screen to check pending approvals and active agent status without launching the app.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Long-press an empty area on your Android home screen and select <strong>Widgets</strong>.</li>
+                      <li>Scroll to <strong>Macha</strong> to browse the 10 widgets:
+                        <ul style="padding-left:1.2rem;margin-top:0.4rem;display:flex;flex-direction:column;gap:0.25rem;">
+                          <li><strong>Macha at a Glance:</strong> Avatar mood &amp; active status.</li>
+                          <li><strong>Approvals Waiting:</strong> Direct tap-to-approve badge.</li>
+                          <li><strong>Agents Summary:</strong> Active background tasks overview.</li>
+                          <li><strong>Macha Big (4x3):</strong> Interactive mascot companion.</li>
+                          <li><strong>Plan Usage &amp; Finished Today:</strong> Token &amp; task counters.</li>
+                        </ul>
+                      </li>
+                      <li>Swipe down your notification shade and edit tiles to add the <strong>Macha Quick Dictation</strong> tile.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Android Widgets</h4>
+                      <p class="placeholder-desc">Capture Android home screen with Macha Big, Status Pill, and Quick Tile.</p>
+                      <span class="placeholder-path-badge">assets/guide/android-widgets.png</span>
+                    </div>
+                    <p class="media-caption">Macha's Android home screen widgets and quick control tile.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 13: Local Workflows -->
+              <article class="feature-detail-card" id="feat-workflows">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Local Automations &amp; PowerShell Workflows</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Configure custom PowerShell scripts, command macros, and desktop shortcuts inside Macha. Trigger complex build routines or clean directories with a simple voice prompt or hotkey.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Start a local development environment (Docker + npm run dev + redis) with a single voice command: <em>"Hey Macha, start dev stack"</em>.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Open <strong>Settings &rarr; Workflows</strong>.</li>
+                      <li>Click <strong>+ New Workflow</strong> and give it a name (e.g. <code>dev-stack</code>).</li>
+                      <li>Write your PowerShell script in the built-in editor.</li>
+                      <li>Assign a trigger keyword (e.g. <em>"start dev stack"</em>) or a dedicated shortcut like <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Workflows</h4>
+                      <p class="placeholder-desc">Capture Settings &rarr; Workflows showing saved PowerShell macros.</p>
+                      <span class="placeholder-path-badge">assets/guide/workflows-macro.png</span>
+                    </div>
+                    <p class="media-caption">Macha local workflow builder and command automation runner.</p>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Feature 14: Media Controls & Alerts -->
+              <article class="feature-detail-card" id="feat-media">
+                <div class="feature-header">
+                  <div class="feature-title-group">
+                    <div class="feature-icon-box" aria-hidden="true">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polygon points="10 8 16 12 10 16 10 8"></polygon></svg>
+                    </div>
+                    <div>
+                      <h3 class="feature-title">Media Session Controls &amp; Desktop Alerts</h3>
+                    </div>
+                  </div>
+                  <span class="platform-pill windows">Windows Only</span>
+                </div>
+
+                <div class="feature-grid-content">
+                  <div class="feature-info">
+                    <p class="feature-lead-text">
+                      Integrates with Windows Global System Media Transport Controls (GSMTC). Detects active audio streams from Spotify, Chrome, iTunes, or Apple Music directly inside the island with album art and playback controls.
+                    </p>
+                    <div class="scenario-callout">
+                      <strong>When to use:</strong> Pause background music during a call or skip tracks without bringing media players to the foreground.
+                    </div>
+                    <ol class="steps-list">
+                      <li>Start playing music on Spotify or your preferred Windows media player.</li>
+                      <li>Hover over the island to reveal the mini playback pill with track title and album art.</li>
+                      <li>Click the island media icons to <strong>Play</strong>, <strong>Pause</strong>, or <strong>Skip</strong>.</li>
+                      <li>System notifications appear as friendly bubble toasts anchored to the island.</li>
+                    </ol>
+                  </div>
+
+                  <div class="feature-media">
+                    <div class="guide-placeholder-frame">
+                      <svg class="placeholder-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+                      <h4 class="placeholder-title">Screenshot Placeholder: Media Controls</h4>
+                      <p class="placeholder-desc">Capture the island showing Spotify track title, album artwork, and controls.</p>
+                      <span class="placeholder-path-badge">assets/guide/media-controls.png</span>
+                    </div>
+                    <p class="media-caption">Integrated Windows media session controls inside the floating island.</p>
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- ============================================================
+               SECTION 4: SETTINGS EXPLAINED
+          ============================================================ -->
+          <section id="settings" class="guide-section">
+            <span class="section-eyebrow">Section 04</span>
+            <h2 class="section-title">
+              Settings Explained
+              <a href="#settings" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              A comprehensive reference for every tab and toggle in Macha's Settings Hub (<kbd>Alt</kbd> + <kbd>,</kbd>).
+            </p>
+
+            <div class="settings-hub-card">
+              <h3 style="font-family:var(--font-display);font-size:1.25rem;color:var(--cream);margin-bottom:1rem;">1. General Settings</h3>
+              <div class="settings-table-wrap">
+                <table class="settings-table">
+                  <thead>
+                    <tr><th>Setting Option</th><th>Type</th><th>Default</th><th>Description</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><code>Start on boot</code></td><td>Toggle</td><td>Enabled</td><td>Automatically launches Macha in the system tray when Windows boots.</td></tr>
+                    <tr><td><code>Island Position</code></td><td>Select</td><td>Top Center</td><td>Choose dock position: Top Center, Top Left, or Top Right.</td></tr>
+                    <tr><td><code>Auto-check updates</code></td><td>Toggle</td><td>Enabled</td><td>Checks GitHub releases periodically for new Beta improvements.</td></tr>
+                    <tr><td><code>Minimize to tray</code></td><td>Toggle</td><td>Enabled</td><td>Closing the expanded island keeps Macha running quietly in the tray.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 style="font-family:var(--font-display);font-size:1.25rem;color:var(--cream);margin-bottom:1rem;">2. Voice &amp; Dictation</h3>
+              <div class="settings-table-wrap">
+                <table class="settings-table">
+                  <thead>
+                    <tr><th>Setting Option</th><th>Type</th><th>Default</th><th>Description</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><code>Push-to-Talk Hotkey</code></td><td>Keybind</td><td>Right Alt</td><td>The dedicated hotkey to hold while speaking into Nixi dictation.</td></tr>
+                    <tr><td><code>Whisper Model</code></td><td>Select</td><td>whisper-base</td><td>Local transcription model (tiny for ultra-fast, base/small for high accuracy).</td></tr>
+                    <tr><td><code>Wake Word Listener</code></td><td>Toggle</td><td>Disabled</td><td>Listens in the background for the phrase "Hey Macha".</td></tr>
+                    <tr><td><code>Speech Engine (TTS)</code></td><td>Select</td><td>Windows SAPI</td><td>Voice synthesis system used for spoken companion replies.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 style="font-family:var(--font-display);font-size:1.25rem;color:var(--cream);margin-bottom:1rem;">3. AI Providers &amp; Models</h3>
+              <div class="settings-table-wrap">
+                <table class="settings-table">
+                  <thead>
+                    <tr><th>Setting Option</th><th>Type</th><th>Default</th><th>Description</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td><code>Ollama Endpoint</code></td><td>URL</td><td><code>http://localhost:11434</code></td><td>Connection endpoint for local Ollama server instance.</td></tr>
+                    <tr><td><code>Active Model</code></td><td>Select</td><td><code>qwen2.5:7b</code></td><td>Primary local LLM model for conversation and file Q&amp;A.</td></tr>
+                    <tr><td><code>OpenRouter API Key</code></td><td>Secret</td><td>Empty</td><td>Optional cloud API key used as fallback for frontier models (Claude 3.5 Sonnet, GPT-4o).</td></tr>
+                    <tr><td><code>Context Temperature</code></td><td>Slider</td><td>0.7</td><td>Creativity vs deterministic factual precision scale.</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               SECTION 5: TIPS & SHORTCUTS CHEATSHEET
+          ============================================================ -->
+          <section id="shortcuts" class="guide-section">
+            <span class="section-eyebrow">Section 05</span>
+            <h2 class="section-title">
+              Tips &amp; Shortcuts Cheatsheet
+              <a href="#shortcuts" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              Master Macha with these global keyboard shortcuts, mouse gestures, and companion actions.
+            </p>
+
+            <div class="shortcuts-grid">
+              <!-- Desktop Hotkeys -->
+              <div class="shortcut-card">
+                <div class="shortcut-card-title">
+                  <span>Desktop &amp; Island Hotkeys</span>
+                  <span class="platform-pill windows" style="font-size:0.65rem;">Windows</span>
+                </div>
+                <div class="shortcut-rows">
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Toggle Chat / Island</span>
+                    <div class="kbd-group"><kbd>Alt</kbd> + <kbd>Space</kbd></div>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Open Settings Hub</span>
+                    <div class="kbd-group"><kbd>Alt</kbd> + <kbd>,</kbd></div>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Collapse / Dismiss</span>
+                    <div class="kbd-group"><kbd>Esc</kbd></div>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Approve Claude Tool</span>
+                    <div class="kbd-group"><kbd>Y</kbd></div>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Deny Claude Tool</span>
+                    <div class="kbd-group"><kbd>N</kbd></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Voice & Vision Hotkeys -->
+              <div class="shortcut-card">
+                <div class="shortcut-card-title">
+                  <span>Voice &amp; Vision Hotkeys</span>
+                  <span class="platform-pill windows" style="font-size:0.65rem;">Windows</span>
+                </div>
+                <div class="shortcut-rows">
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Push-to-Talk (Nixi)</span>
+                    <div class="kbd-group"><kbd>Hold Right Alt</kbd></div>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Screen Crop &amp; Talk</span>
+                    <div class="kbd-group"><kbd>Ctrl</kbd> + <kbd>Alt</kbd></div>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Toggle Vision Tracking</span>
+                    <div class="kbd-group"><kbd>Alt</kbd> + <kbd>V</kbd></div>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Vision Click</span>
+                    <span class="shortcut-action" style="font-size:0.8rem;color:var(--matcha-300);">Pinch Thumb + Index</span>
+                  </div>
+                  <div class="shortcut-row">
+                    <span class="shortcut-action">Vision Right Click</span>
+                    <span class="shortcut-action" style="font-size:0.8rem;color:var(--matcha-300);">Pinch Thumb + Middle</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               SECTION 6: TROUBLESHOOTING
+          ============================================================ -->
+          <section id="troubleshooting" class="guide-section">
+            <span class="section-eyebrow">Section 06</span>
+            <h2 class="section-title">
+              Troubleshooting
+              <a href="#troubleshooting" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              Quick fixes for common setup questions, permission prompts, and connection states.
+            </p>
+
+            <div class="trouble-grid">
+              <!-- SmartScreen -->
+              <div class="trouble-card">
+                <span class="trouble-tag">Windows Security</span>
+                <h3 class="trouble-issue">Windows SmartScreen: "Windows protected your PC"</h3>
+                <p class="trouble-solution">
+                  Macha is an open-source community beta and is not yet signed with an expensive enterprise certificate. Click <strong>More info</strong> on the dialog, then click <strong>Run anyway</strong>. You can verify the full source code on GitHub.
+                </p>
+              </div>
+
+              <!-- Android APK -->
+              <div class="trouble-card">
+                <span class="trouble-tag">Android Install</span>
+                <h3 class="trouble-issue">Android: "Install unknown apps" Warning</h3>
+                <p class="trouble-solution">
+                  When installing <code>Macha.apk</code> directly from your browser, Android will prompt for permission. Tap <strong>Settings</strong> on the prompt, enable <strong>Allow from this source</strong>, then tap <strong>Install</strong>.
+                </p>
+              </div>
+
+              <!-- Claude Code Hook -->
+              <div class="trouble-card">
+                <span class="trouble-tag">CLI Integration</span>
+                <h3 class="trouble-issue">Claude Code CLI not sending approvals to island</h3>
+                <p class="trouble-solution">
+                  Ensure the hook binary is installed in your PATH. Run <code>macha --hook status</code> in PowerShell. If missing, run <code>macha --hook install</code> or check that <code>macha-hook.exe</code> is listed in your Claude config file.
+                </p>
+              </div>
+
+              <!-- Ollama Local Model -->
+              <div class="trouble-card">
+                <span class="trouble-tag">Local LLM</span>
+                <h3 class="trouble-issue">Ollama: "Failed to connect to localhost:11434"</h3>
+                <p class="trouble-solution">
+                  Make sure Ollama is running in your terminal (run <code>ollama serve</code>) and that you have pulled the default model: <code>ollama pull qwen2.5:7b</code>. Verify by opening <code>http://localhost:11434</code> in your browser.
+                </p>
+              </div>
+
+              <!-- Microphone -->
+              <div class="trouble-card">
+                <span class="trouble-tag">Audio Input</span>
+                <h3 class="trouble-issue">Microphone not picking up speech in Nixi</h3>
+                <p class="trouble-solution">
+                  Open <strong>Windows Settings &rarr; Privacy &amp; security &rarr; Microphone</strong> and ensure <em>Let desktop apps access your microphone</em> is toggled <strong>On</strong>. In Macha, open <strong>Settings &rarr; Voice</strong> and check your active input device.
+                </p>
+              </div>
+
+              <!-- Wi-Fi Sync -->
+              <div class="trouble-card">
+                <span class="trouble-tag">Companion Link</span>
+                <h3 class="trouble-issue">Phone companion fails to pair over local Wi-Fi</h3>
+                <p class="trouble-solution">
+                  Ensure both your PC and phone are connected to the same Wi-Fi router subnet and that Windows Firewall is not blocking local port <code>8765</code>. If on a guest or corporate Wi-Fi network, toggle on <strong>Cloudflare Relay</strong> in <strong>Settings &rarr; Phone Link</strong>.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               SECTION 7: FREQUENTLY ASKED QUESTIONS (FAQ)
+          ============================================================ -->
+          <section id="faq" class="guide-section">
+            <span class="section-eyebrow">Section 07</span>
+            <h2 class="section-title">
+              Frequently Asked Questions
+              <a href="#faq" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              Answers to the most common questions about Macha's privacy, performance, and capabilities.
+            </p>
+
+            <div class="faq-list">
+              <!-- Q1 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Is Macha truly 100% private and offline?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Yes. When configured with local Ollama models and local Whisper speech engines, Macha processes 100% of your keystrokes, audio, files, and gestures on your own physical hardware. Zero telemetry, code, or personal data is sent to external servers.
+                </div>
+              </details>
+
+              <!-- Q2 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Does Macha cost anything to use?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Macha is completely free and open source. If you use local models through Ollama, there are zero subscription or token fees. If you choose to connect an optional OpenRouter API key for cloud frontier models, you only pay OpenRouter for your actual token usage.
+                </div>
+              </details>
+
+              <!-- Q3 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>What are the minimum system requirements for Windows?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Windows 10 or 11 (64-bit). The Macha desktop island itself is lightweight (&lt;80MB RAM). For running local 7B models via Ollama, we recommend 16GB of system RAM or a dedicated GPU with 6GB+ VRAM (NVIDIA RTX or AMD equivalent).
+                </div>
+              </details>
+
+              <!-- Q4 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>How does the Claude Code approval integration work?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Claude Code supports hook scripts before running tools. The included <code>macha-hook.exe</code> relays tool requests to the desktop island over an encrypted local socket. Macha displays the command or file edit with clear diffs so you can approve or deny in a fraction of a second.
+                </div>
+              </details>
+
+              <!-- Q5 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Can I use Macha on multiple monitors?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Yes! In <strong>Settings &rarr; General</strong>, you can assign which monitor displays the Dynamic Island, or simply drag the island to your preferred display.
+                </div>
+              </details>
+
+              <!-- Q6 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>What Android versions are supported?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Android 10 and newer are fully supported, including home screen widgets, lock screen notification actions, and biometric fingerprint authentication for remote approvals.
+                </div>
+              </details>
+
+              <!-- Q7 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Can I change the companion avatars and wardrobe?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Yes! You can choose your lead active companion (Macha, Cubee, or Onee) in Settings. On Android, you can also unlock 11 custom wardrobe outfits and accent color themes.
+                </div>
+              </details>
+
+              <!-- Q8 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Does Vision Mode record my webcam?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  No video frames are ever recorded, saved to disk, or transmitted over the network. Video stream buffers are analyzed in RAM for hand landmark coordinates and discarded immediately.
+                </div>
+              </details>
+
+              <!-- Q9 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>How do I create custom automation workflows?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  Navigate to <strong>Settings &rarr; Workflows</strong> and click <strong>+ New Workflow</strong>. You can paste PowerShell code or command lines and bind them to custom voice triggers or keyboard hotkeys.
+                </div>
+              </details>
+
+              <!-- Q10 -->
+              <details class="faq-item">
+                <summary class="faq-question">
+                  <span>Where are application logs saved if I encounter a bug?</span>
+                  <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </summary>
+                <div class="faq-answer">
+                  On Windows, logs are saved in <code>%APPDATA%\Macha\logs\</code>. On Android, tap <strong>Settings &rarr; Export Debug Logs</strong> inside the companion app.
+                </div>
+              </details>
+            </div>
+          </section>
+
+          <!-- ============================================================
+               SECTION 8: BETA & FEEDBACK
+          ============================================================ -->
+          <section id="feedback" class="guide-section">
+            <span class="section-eyebrow">Section 08</span>
+            <h2 class="section-title">
+              Beta &amp; Feedback
+              <a href="#feedback" class="section-anchor" aria-label="Link to section">#</a>
+            </h2>
+            <p class="section-desc">
+              Macha is under active open-source development. We appreciate bug reports, feature suggestions, and workflow ideas from early adopters.
+            </p>
+
+            <div class="guide-callout tip" style="margin-bottom:2.5rem;">
+              <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+              <div>
+                <strong>Report Issues or Contribute:</strong> Visit the official GitHub repository at <a href="https://github.com/dev-praj/Macha_by_Prajwal" target="_blank" rel="noopener noreferrer" style="color:var(--matcha-300);text-decoration:underline;">github.com/dev-praj/Macha_by_Prajwal</a> to submit issues, open pull requests, or browse upcoming features.
+              </div>
+            </div>
+
+            <!-- Bottom CTA Banner -->
+            <div class="checklist-card-wrap" style="text-align:center;padding:3.5rem 2rem;">
+              <h3 style="font-family:var(--font-display);font-size:clamp(1.75rem,3vw,2.25rem);color:var(--cream);font-weight:800;margin-bottom:0.75rem;">
+                Ready to try Macha?
+              </h3>
+              <p style="color:var(--text-muted);font-size:1.0625rem;max-width:540px;margin:0 auto 2rem;line-height:1.6;">
+                Download the free community beta for Windows and Android. No account required.
+              </p>
+              <div style="display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;">
+                <a href="downloads/Macha.exe" class="btn btn-coral">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                  <span>Download for Windows (.exe)</span>
+                </a>
+                <a href="downloads/Macha.apk" class="btn btn-secondary">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                  <span>Download for Android (.apk)</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ==============================================================
+       FOOTER
+  ============================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="footer-brand" aria-label="Macha home">
+          <div class="mini-cluster" aria-hidden="true">
+            <div class="mini-av mini-onee"></div>
+            <div class="mini-av mini-cubee"></div>
+            <div class="mini-av mini-macha">
+              <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><rect x="112" y="197" width="800" height="630" rx="255" fill="#FFFDFB"/><circle cx="373" cy="535" r="42" fill="#231F20"/><circle cx="651" cy="535" r="42" fill="#231F20"/></svg>
+            </div>
+          </div>
+          <span class="footer-title">Macha</span>
+        </a>
+        <p class="footer-tagline">
+          The ceremonial matcha companion for Windows &amp; Android.
+        </p>
+      </div>
+
+      <div class="footer-col links-col">
+        <div class="footer-heading">Navigation</div>
+        <ul class="footer-links">
+          <li><a href="index.html">Home / Download</a></li>
+          <li><a href="guide.html">Field Guide</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#sync">Ecosystem</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col links-col">
+        <div class="footer-heading">Project</div>
+        <ul class="footer-links">
+          <li><a href="https://github.com/dev-praj/Macha_by_Prajwal" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+          <li><a href="https://github.com/dev-praj/Macha_by_Prajwal/issues" target="_blank" rel="noopener noreferrer">Issue Tracker</a></li>
+          <li><a href="GUIDE_TODO.md" target="_blank">Guide Asset Checklist</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="footer-copy">&copy; Macha. Free and open-source under MIT License.</p>
+        <p class="footer-watermark">Created by Prajwal</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+
+  <!-- Interactive Guide Scripts -->
+  <script src="js/guide.js"></script>
+</body>
+</html>

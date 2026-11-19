@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Macha — Your Expressive AI Companion</title>
+  <meta name="description" content="Macha is an expressive AI companion docked right on your screen. Intelligent, animated, and always by your side on Android and Windows." />
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Macha — Your Expressive AI Companion" />
+  <meta property="og:description" content="Meet Macha, Cubee, and Onee — an expressive AI companion team docked on your desktop and phone. Download the beta." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/macha-face.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Macha — Your Expressive AI Companion" />
+  <meta name="twitter:description" content="Meet Macha — an expressive AI companion for Android and Windows." />
+
+  <!-- Favicon: Unified Avatar Cluster -->
+  <link rel="icon" type="image/svg+xml" href="assets/avatar-cluster.svg" />
+
+  <!-- Google Fonts: Bricolage Grotesque (800), DM Sans, Instrument Serif (Italic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@1&family=Noto+Sans+Kannada:wght@700;800&family=Noto+Sans+Telugu:wght@700;800&display=swap" rel="stylesheet" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=1795053970" />
+  <script>
+    // If already seen, reduced motion, or ?skip_loader param: skip immediately
+    if (sessionStorage.getItem('macha_session_loaded') ||
+        window.location.search.includes('skip_loader') ||
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('no-loader');
+    } else {
+      document.documentElement.classList.add('loader-active');
+    }
+    // Hard safety net: guarantee loader dismisses after 5s max under any condition
+    window.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var loader = document.getElementById('loader');
+        if (loader && !loader.classList.contains('hidden')) {
+          loader.classList.add('hidden');
+          document.documentElement.classList.remove('loader-active');
+          sessionStorage.setItem('macha_session_loaded', 'true');
+          setTimeout(function() { if (loader.parentNode) loader.remove(); }, 800);
+        }
+      }, 20000);
+    });
+  </script>
+</head>
+<body>
+
+  <!-- ==============================================================
+       3D MATCHA CEREMONY LOADER
+  ============================================================== -->
+  <aside id="loader" class="loader-overlay" role="dialog" aria-modal="true" aria-label="Welcome to Macha">
+    <div class="startup-scene">
+      <!-- Ambient Matcha-Green Radial Glow -->
+      <div class="startup-glow" aria-hidden="true"></div>
+
+      <!-- Trio Avatar Stage: Centered, Large (30-40% viewport height) -->
+      <div class="startup-stage" id="startup-stage" aria-label="Macha and companion avatars greeting">
+        
+        <!-- Cubee (Left, -12deg) -->
+        <div class="startup-av startup-cubee" id="startup-cubee">
+          <svg viewBox="0 0 160 150" class="av-svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="st-c-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FF6A57"/>
+                <stop offset="100%" stop-color="#D84330"/>
+              </linearGradient>
+              <filter id="st-c-sh" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#050906" flood-opacity="0.45"/>
+              </filter>
+            </defs>
+            <g filter="url(#st-c-sh)">
+              <rect x="8" y="10" width="144" height="130" rx="38" fill="url(#st-c-grad)" stroke="#0A120D" stroke-width="5"/>
+              <path d="M 24 22 C 35 15, 125 15, 136 22 C 140 32, 140 45, 136 50 C 110 38, 50 38, 24 50 Z" fill="rgba(255,255,255,0.18)"/>
+              <g class="cubee-eyes av-eyes">
+                <rect x="36" y="66" width="32" height="14" rx="7" fill="#111316"/>
+                <rect x="92" y="66" width="32" height="14" rx="7" fill="#111316"/>
+                <circle cx="43" cy="69" r="2.5" fill="#FFFDFB"/>
+                <circle cx="99" cy="69" r="2.5" fill="#FFFDFB"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Onee (Right, +12deg) -->
+        <div class="startup-av startup-onee" id="startup-onee">
+          <svg viewBox="0 0 160 150" class="av-svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="st-o-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E8EEFA"/>
+                <stop offset="100%" stop-color="#C2CCE6"/>
+              </linearGradient>
+              <filter id="st-o-sh" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#050906" flood-opacity="0.45"/>
+              </filter>
+            </defs>
+            <g filter="url(#st-o-sh)">
+              <rect x="8" y="10" width="144" height="130" rx="44" fill="url(#st-o-grad)" stroke="#0A120D" stroke-width="5"/>
+              <path d="M 26 22 C 40 16, 120 16, 134 22 C 138 30, 136 42, 132 48 C 105 38, 55 38, 28 48 Z" fill="rgba(255,255,255,0.35)"/>
+              <g class="onee-eyes av-eyes">
+                <ellipse cx="50" cy="74" rx="10" ry="18" fill="#111316"/>
+                <ellipse cx="110" cy="74" rx="10" ry="18" fill="#111316"/>
+                <circle cx="48" cy="68" r="2.5" fill="#FFFDFB"/>
+                <circle cx="108" cy="68" r="2.5" fill="#FFFDFB"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Macha (Front Center, 0deg, Waving hands & real eyes) -->
+        <div class="startup-av startup-macha" id="startup-macha">
+          <!-- Real Macha Left Hand -->
+          <div class="macha-hand macha-hand-l" id="macha-hand-l" aria-hidden="true">
+            <svg viewBox="0 0 44 44">
+              <circle cx="22" cy="22" r="18" fill="#FFFDFB" stroke="#0A120D" stroke-width="4"/>
+            </svg>
+          </div>
+
+          <!-- Real Macha Right Hand (Waving peek) -->
+          <div class="macha-hand macha-hand-r" id="macha-hand-r" aria-hidden="true">
+            <svg viewBox="0 0 54 36">
+              <rect x="4" y="5" width="46" height="26" rx="13" fill="#FFFDFB" stroke="#0A120D" stroke-width="4"/>
+            </svg>
+          </div>
+
+          <svg viewBox="0 0 160 150" class="av-svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="st-m-grad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFFDFB"/>
+                <stop offset="100%" stop-color="#EBE3DB"/>
+              </linearGradient>
+              <filter id="st-m-sh" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="16" stdDeviation="14" flood-color="#050906" flood-opacity="0.6"/>
+              </filter>
+            </defs>
+            <g filter="url(#st-m-sh)">
+              <rect x="8" y="10" width="144" height="130" rx="40" fill="url(#st-m-grad)" stroke="#0A120D" stroke-width="5"/>
+              <path d="M 26 20 C 40 14, 120 14, 134 20 C 138 28, 136 38, 130 44 C 105 34, 55 34, 30 44 Z" fill="rgba(255,255,255,0.5)"/>
+              
+              <!-- Normal open pill eyes with eyelid blinks -->
+              <g class="macha-eyes av-eyes" id="st-macha-eyes-normal">
+                <ellipse cx="54" cy="74" rx="13" ry="15" fill="#1A1412" id="st-macha-eye-l"/>
+                <ellipse cx="106" cy="74" rx="13" ry="15" fill="#1A1412" id="st-macha-eye-r"/>
+                <circle cx="51.5" cy="70" r="2.5" fill="#FFFDFB" id="st-macha-catch-l"/>
+                <circle cx="103.5" cy="70" r="2.5" fill="#FFFDFB" id="st-macha-catch-r"/>
+              </g>
+
+              <!-- Happy squint arc eyes (App's T.squint) -->
+              <g class="macha-eyes-happy" id="st-macha-eyes-happy" style="display: none;">
+                <path d="M 40 76 C 44 66, 64 66, 68 76" fill="none" stroke="#1A1412" stroke-width="5.5" stroke-linecap="round"/>
+                <path d="M 92 76 C 96 66, 116 66, 120 76" fill="none" stroke="#1A1412" stroke-width="5.5" stroke-linecap="round"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+
+      </div>
+
+      <!-- Clear spacing below avatars: Friendly Greeting in Bricolage Grotesque + Instrument Serif -->
+      <div class="startup-greeting" id="startup-greeting">
+        <h2 class="greeting-headline" id="greeting-headline">
+          <span class="greeting-text" id="greeting-text">Hello</span>
+        </h2>
+        <p class="greeting-subline" id="greeting-subline">
+          Getting things ready for you...
+        </p>
+      </div>
+
+      <!-- Subtle 2px matcha progress line at bottom of viewport (no percentage numbers) -->
+      <div class="startup-progress" aria-hidden="true">
+        <div class="startup-progress-bar" id="startup-progress-bar"></div>
+      </div>
+
+      <!-- Small Skip button appearing after 0.8s -->
+      <button type="button" class="startup-skip" id="startup-skip" aria-label="Skip introduction">
+        Skip &rarr;
+      </button>
+
+    </div>
+  </aside>
+
+  <!-- ==============================================================
+       STICKY BLURRED NAVBAR (Zero stray lines)
+  ============================================================== -->
+  <header id="navbar" class="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" aria-label="Macha home">
+        <!-- Reusable Mini Unified Avatar Stack as Logo -->
+        <div class="avatar-stack mini" aria-hidden="true">
+          <div class="avatar-card av-cubee">
+            <svg viewBox="0 0 160 150" class="av-svg">
+              <rect x="8" y="10" width="144" height="130" rx="38" fill="#E65C5C" stroke="#0A120D" stroke-width="6"/>
+              <g class="cubee-eyes av-eyes">
+                <rect x="36" y="66" width="32" height="14" rx="7" fill="#111316"/>
+                <rect x="92" y="66" width="32" height="14" rx="7" fill="#111316"/>
+              </g>
+            </svg>
+          </div>
+          <div class="avatar-card av-onee">
+            <svg viewBox="0 0 160 150" class="av-svg">
+              <rect x="8" y="10" width="144" height="130" rx="42" fill="#DBE2F5" stroke="#0A120D" stroke-width="6"/>
+              <g class="onee-eyes av-eyes">
+                <ellipse cx="50" cy="74" rx="10" ry="18" fill="#111316"/>
+                <ellipse cx="110" cy="74" rx="10" ry="18" fill="#111316"/>
+              </g>
+            </svg>
+          </div>
+          <div class="avatar-card av-macha">
+            <svg viewBox="0 0 160 150" class="av-svg">
+              <rect x="8" y="10" width="144" height="130" rx="40" fill="#FFFDFB" stroke="#0A120D" stroke-width="6"/>
+              <g class="macha-eyes av-eyes">
+                <ellipse cx="54" cy="74" rx="13" ry="15" fill="#1A1412"/>
+                <ellipse cx="106" cy="74" rx="13" ry="15" fill="#1A1412"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+        <span class="nav-title">Macha</span>
+      </a>
+
+      <nav class="nav-menu" aria-label="Page sections">
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#sync" class="nav-item">Ecosystem</a>
+        <a href="guide.html" class="nav-item">Guide</a>
+        <a href="#download" class="nav-item">Download</a>
+        <a href="https://github.com/dev-praj/Macha_by_Prajwal" target="_blank" rel="noopener noreferrer" class="nav-item nav-gh" aria-label="View source repository on GitHub">
+          <svg class="nav-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#download" class="btn btn-coral btn-sm">Get Beta</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ==============================================================
+         HERO SECTION (Asymmetric Editorial Layout)
+    ============================================================== -->
+    <section id="hero" class="hero-section" aria-labelledby="hero-title">
+      <!-- Ambient Matcha-Green Aurora & Texture -->
+      <div class="hero-ambient" aria-hidden="true">
+        <div class="ambient-glow glow-1"></div>
+        <div class="ambient-glow glow-2"></div>
+        <div class="ambient-grain"></div>
+        <canvas id="hero-bg-canvas" class="hero-canvas"></canvas>
+      </div>
+
+      <div class="hero-container">
+        
+        <!-- Left Column: Editorial Headline & Actions -->
+        <div class="hero-copy">
+          <div class="hero-badge-row">
+            <span class="badge-beta">Beta</span>
+            <span class="hero-beta-inline">Macha is currently in beta. Your feedback directly shapes each build.</span>
+          </div>
+
+          <!-- Solid Cream Headline with Italic Serif 'a's (NO gradient text) -->
+          <h1 id="hero-title" class="hero-title">
+            M<span class="title-serif">a</span>ch<span class="title-serif">a</span>
+          </h1>
+
+          <p class="hero-tagline">
+            An expressive AI companion docked right on your screen &mdash; listening, reacting, and thinking alongside you.
+          </p>
+
+          <!-- Primary CTA Row (Coral dominant + Cream Outline) -->
+          <div class="hero-cta-group" role="group" aria-label="Download Macha">
+            <a href="downloads/Macha.apk" download class="btn btn-coral btn-lg" id="hero-dl-android" aria-label="Download Macha for Android APK">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.523 15.341a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V9h10v6.341ZM7 7.5a1.5 1.5 0 1 1 3 0H7Zm7 0a1.5 1.5 0 1 1 3 0h-3ZM3.5 9a.5.5 0 0 1 .5-.5H5v5.5a.5.5 0 0 1-1 0V9Zm17 0v5a.5.5 0 0 1-1 0V8.5h1a.5.5 0 0 1 .5.5ZM6.272 3.853l1.47-2.546a.25.25 0 0 1 .433.25L6.72 4.082A6.985 6.985 0 0 1 10 4h4c1.17 0 2.27.288 3.237.796l-1.464-2.238a.25.25 0 0 1 .416-.277l1.47 2.546A7.001 7.001 0 0 1 20 9H4a7.001 7.001 0 0 1 2.272-5.147Z"/></svg>
+              <span>Download for Android</span>
+            </a>
+
+            <a href="downloads/Macha.exe" download class="btn btn-outline btn-lg" id="hero-dl-windows" aria-label="Download Macha for Windows Installer">
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 5.558 11.381 4.5v7.608H3V5.558ZM12.619 4.344 21 3v9.108h-8.381V4.344ZM3 13.108h8.381V20.5L3 19.442v-6.334ZM12.619 13.108H21V21l-8.381-1.157v-6.735Z"/></svg>
+              <span>Download for Windows</span>
+            </a>
+          </div>
+
+          <!-- Install notes with info icon -->
+          <div class="hero-notes-row">
+            <svg class="info-symbol" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>
+            <span><strong>Android:</strong> Allow installs from unknown sources &nbsp;&middot;&nbsp; <strong>Windows:</strong> Click &ldquo;More info &rarr; Run anyway&rdquo;</span>
+          </div>
+
+          <!-- Quiet GitHub link -->
+          <a href="https://github.com/dev-praj/Macha_by_Prajwal" target="_blank" rel="noopener noreferrer" class="hero-source-link">
+            <svg class="source-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.741 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+            <span>View Source on GitHub &rarr;</span>
+          </a>
+        </div>
+
+        <!-- Right Column: 3D Fanned Hand Avatar Stack -->
+        <div class="hero-stage">
+          <div class="stage-glow" aria-hidden="true"></div>
+          
+          <div id="hero-avatar-cluster" class="avatar-stack hero" aria-label="Interactive avatar trio: Cubee on left, Macha center, Onee on right">
+            
+            <!-- Cubee (Left, -12deg) -->
+            <div class="avatar-card av-cubee" data-av="cubee" tabindex="0" role="button" aria-label="Cubee avatar character">
+              <svg viewBox="0 0 160 150" class="av-svg">
+                <defs>
+                  <linearGradient id="hero-c-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FF6A57"/>
+                    <stop offset="100%" stop-color="#D84330"/>
+                  </linearGradient>
+                </defs>
+                <rect x="8" y="10" width="144" height="130" rx="38" fill="url(#hero-c-grad)" stroke="#0A120D" stroke-width="5"/>
+                <path d="M 24 22 C 35 15, 125 15, 136 22 C 140 32, 140 45, 136 50 C 110 38, 50 38, 24 50 Z" fill="rgba(255,255,255,0.18)"/>
+                <g class="cubee-eyes av-eyes">
+                  <rect x="36" y="66" width="32" height="14" rx="7" fill="#111316"/>
+                  <rect x="92" y="66" width="32" height="14" rx="7" fill="#111316"/>
+                  <circle cx="43" cy="69" r="2.5" fill="#FFFDFB"/>
+                  <circle cx="99" cy="69" r="2.5" fill="#FFFDFB"/>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Onee (Right, +12deg) -->
+            <div class="avatar-card av-onee" data-av="onee" tabindex="0" role="button" aria-label="Onee avatar character">
+              <svg viewBox="0 0 160 150" class="av-svg">
+                <defs>
+                  <linearGradient id="hero-o-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#E8EEFA"/>
+                    <stop offset="100%" stop-color="#C2CCE6"/>
+                  </linearGradient>
+                </defs>
+                <rect x="8" y="10" width="144" height="130" rx="44" fill="url(#hero-o-grad)" stroke="#0A120D" stroke-width="5"/>
+                <path d="M 26 22 C 40 16, 120 16, 134 22 C 138 30, 136 42, 132 48 C 105 38, 55 38, 28 48 Z" fill="rgba(255,255,255,0.35)"/>
+                <g class="onee-eyes av-eyes">
+                  <ellipse cx="50" cy="74" rx="10" ry="18" fill="#111316"/>
+                  <ellipse cx="110" cy="74" rx="10" ry="18" fill="#111316"/>
+                  <circle cx="48" cy="68" r="2.5" fill="#FFFDFB"/>
+                  <circle cx="108" cy="68" r="2.5" fill="#FFFDFB"/>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Macha (Front Center, 0deg) -->
+            <div class="avatar-card av-macha" data-av="macha" tabindex="0" role="button" aria-label="Macha avatar character">
+              <svg viewBox="0 0 160 150" class="av-svg">
+                <defs>
+                  <linearGradient id="hero-m-grad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFFDFB"/>
+                    <stop offset="100%" stop-color="#EBE3DB"/>
+                  </linearGradient>
+                </defs>
+                <rect x="8" y="10" width="144" height="130" rx="40" fill="url(#hero-m-grad)" stroke="#0A120D" stroke-width="5"/>
+                <path d="M 26 20 C 40 14, 120 14, 134 20 C 138 28, 136 38, 130 44 C 105 34, 55 34, 30 44 Z" fill="rgba(255,255,255,0.5)"/>
+                <g class="macha-eyes av-eyes">
+                  <ellipse cx="54" cy="74" rx="13" ry="15" fill="#1A1412"/>
+                  <ellipse cx="106" cy="74" rx="13" ry="15" fill="#1A1412"/>
+                  <circle cx="51" cy="70" r="2.5" fill="#FFFDFB"/>
+                  <circle cx="103" cy="70" r="2.5" fill="#FFFDFB"/>
+                </g>
+              </svg>
+            </div>
+
+          </div>
+
+          <p class="stage-hint">Hover to lift &middot; Eyes follow pointer</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         FEATURES BENTO GRID (Heading with proper scroll-margin)
+    ============================================================== -->
+    <section id="features" class="features-section" aria-labelledby="features-title">
+      <div class="section-wrapper">
+        
+        <header class="section-header">
+          <span class="section-tag">Real Capabilities</span>
+          <h2 id="features-title" class="section-title">Built for personality, engineered for flow</h2>
+          <p class="section-sub">A desktop island and companion that actually lives inside your daily workflow &mdash; not another generic web tab.</p>
+        </header>
+
+        <div class="bento-grid">
+          
+          <!-- BENTO 1: The Screen Island (Large 2-col Tile) -->
+          <article class="bento-card bento-wide" tabindex="0">
+            <div class="bento-header">
+              <span class="bento-badge">Signature UI</span>
+              <h3 class="bento-title">The Living Desktop Island</h3>
+              <p class="bento-desc">Docks quietly to the top of your Windows screen. Stays compact and silent, expanding smoothly when you need assistance, context, or drag-and-drop actions.</p>
+            </div>
+            
+            <!-- Interactive Live Mock of Macha Island -->
+            <div class="bento-demo island-demo" aria-label="Interactive Desktop Island Demonstration">
+              <div class="mock-island" id="mock-island">
+                <div class="island-avatar" id="island-avatar-icon">
+                  <svg viewBox="0 0 160 150">
+                    <rect x="8" y="10" width="144" height="130" rx="40" fill="#FFFDFB"/>
+                    <g id="island-eyes" class="av-eyes">
+                      <ellipse cx="54" cy="74" rx="13" ry="15" fill="#1A1412"/>
+                      <ellipse cx="106" cy="74" rx="13" ry="15" fill="#1A1412"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="island-state-text">
+                  <span class="state-dot"></span>
+                  <span id="island-state-label">Listening for tasks…</span>
+                </div>
+                <div class="island-wave" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+              </div>
+
+              <!-- Interactive Controls to switch live avatar expressions -->
+              <div class="island-controls" role="group" aria-label="Test avatar expressions">
+                <button type="button" class="island-btn active" data-state="idle">Idle</button>
+                <button type="button" class="island-btn" data-state="thinking">Thinking</button>
+                <button type="button" class="island-btn" data-state="working">Working</button>
+                <button type="button" class="island-btn" data-state="happy">Happy</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- BENTO 2: Voice Dictation & STT (Medium Tile) -->
+          <article class="bento-card" tabindex="0">
+            <div class="bento-header">
+              <span class="bento-badge">Voice First</span>
+              <h3 class="bento-title">Instant Speech-to-Text</h3>
+              <p class="bento-desc">Talk naturally. Built-in Whisper audio transcription captures thoughts, instructions, and messages with zero typing.</p>
+            </div>
+            <div class="bento-demo voice-demo" id="voice-demo" aria-label="Voice waveform demo">
+              <div class="audio-visualizer" aria-hidden="true">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+              </div>
+              <span class="voice-hint">Hover to animate waveform</span>
+            </div>
+          </article>
+
+          <!-- BENTO 3: Remote Companion Sync (Medium Tile) -->
+          <article class="bento-card" tabindex="0" id="sync">
+            <div class="bento-header">
+              <span class="bento-badge">Cross Platform</span>
+              <h3 class="bento-title">Windows &amp; Android Pairing</h3>
+              <p class="bento-desc">Seamless device handshake. Carry active agent sessions and memory effortlessly between your desktop and pocket.</p>
+            </div>
+            <div class="bento-demo sync-demo" aria-hidden="true">
+              <div class="sync-device pc-device">
+                <div class="pc-screen">
+                  <div class="mini-dock"></div>
+                </div>
+                <div class="pc-base"></div>
+              </div>
+              <div class="sync-beam">
+                <span class="beam-pulse"></span>
+              </div>
+              <div class="sync-device phone-device">
+                <div class="phone-screen">
+                  <div class="phone-notch"></div>
+                  <div class="phone-avatar"></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BENTO 4: Drag & Drop Context (Medium Tile) -->
+          <article class="bento-card" tabindex="0">
+            <div class="bento-header">
+              <span class="bento-badge">Context Aware</span>
+              <h3 class="bento-title">Direct File Dropzone</h3>
+              <p class="bento-desc">Drop text, code, images, or documents straight onto Macha's island for immediate AI inspection and summarization.</p>
+            </div>
+            <div class="bento-demo drop-demo" aria-hidden="true">
+              <div class="dropzone-outline">
+                <svg class="drop-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 4v12m0 0l-4-4m4 4l4-4M4 18h16" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="drop-chip">document.pdf</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- BENTO 5: Character Diversity (Medium Tile) -->
+          <article class="bento-card" tabindex="0">
+            <div class="bento-header">
+              <span class="bento-badge">3 Personalities</span>
+              <h3 class="bento-title">Macha, Cubee &amp; Onee</h3>
+              <p class="bento-desc">Switch companions at will. Each brings distinct procedural facial physics, blinking cadence, and ambient animations.</p>
+            </div>
+            <div class="bento-demo trio-demo" aria-hidden="true">
+              <div class="trio-chip c-macha">Macha</div>
+              <div class="trio-chip c-cubee">Cubee</div>
+              <div class="trio-chip c-onee">Onee</div>
+            </div>
+          </article>
+
+          <!-- BENTO 6: Open Source & Auditable (Wide 2-col Tile) -->
+          <article class="bento-card bento-wide bento-code-card" tabindex="0">
+            <div class="bento-header">
+              <span class="bento-badge">Open Source</span>
+              <h3 class="bento-title">100% Auditable Codebase</h3>
+              <p class="bento-desc">No telemetry backdoors, no closed models. Macha's frontend, agent layers, and STT server are open source under the MIT License.</p>
+            </div>
+            <div class="bento-demo code-demo">
+              <div class="code-header">
+                <span class="code-circle"></span><span class="code-circle"></span><span class="code-circle"></span>
+                <span class="code-title">github.com/dev-praj/Macha_by_Prajwal</span>
+              </div>
+              <pre class="code-body"><code><span class="c-kw">git clone</span> https://github.com/dev-praj/Macha_by_Prajwal.git
+<span class="c-com"># Explore Windows Tauri island + Android companion</span>
+<span class="c-kw">cd</span> Macha && <span class="c-kw">cargo</span> tauri dev</code></pre>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================================================
+         DOWNLOAD SECTION (Centered Balanced Grid)
+    ============================================================== -->
+    <section id="download" class="download-section" aria-labelledby="download-title">
+      <div class="section-wrapper">
+        
+        <div class="download-panel">
+          <header class="section-header text-center">
+            <span class="section-tag">Direct Downloads</span>
+            <h2 id="download-title" class="section-title">Get Macha Beta</h2>
+            <p class="section-sub">Direct binaries for your workstation and phone. No store redirects, no waitlists.</p>
+          </header>
+
+          <div class="download-grid">
+            
+            <!-- Android Card -->
+            <div class="download-card" tabindex="0">
+              <div class="dl-card-icon android-glow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.523 15.341a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V9h10v6.341ZM7 7.5a1.5 1.5 0 1 1 3 0H7Zm7 0a1.5 1.5 0 1 1 3 0h-3ZM3.5 9a.5.5 0 0 1 .5-.5H5v5.5a.5.5 0 0 1-1 0V9Zm17 0v5a.5.5 0 0 1-1 0V8.5h1a.5.5 0 0 1 .5.5ZM6.272 3.853l1.47-2.546a.25.25 0 0 1 .433.25L6.72 4.082A6.985 6.985 0 0 1 10 4h4c1.17 0 2.27.288 3.237.796l-1.464-2.238a.25.25 0 0 1 .416-.277l1.47 2.546A7.001 7.001 0 0 1 20 9H4a7.001 7.001 0 0 1 2.272-5.147Z"/></svg>
+              </div>
+              <h3 class="dl-platform">Macha for Android</h3>
+              <p class="dl-meta">Direct APK package &middot; Android 10+</p>
+              <p class="dl-copy">Full companion mode with background push sync, mic dictation, and voice conversation.</p>
+              <div class="dl-action">
+                <a href="downloads/Macha.apk" download class="btn btn-coral btn-block" id="dl-apk-btn" aria-label="Download Macha.apk for Android">
+                  <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                  <span>Download APK</span>
+                </a>
+              </div>
+              <small class="dl-helper">Note: Allow installs from unknown sources in Settings &rarr; Security</small>
+            </div>
+
+            <!-- Windows Card -->
+            <div class="download-card" tabindex="0">
+              <div class="dl-card-icon windows-glow" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.558 11.381 4.5v7.608H3V5.558ZM12.619 4.344 21 3v9.108h-8.381V4.344ZM3 13.108h8.381V20.5L3 19.442v-6.334ZM12.619 13.108H21V21l-8.381-1.157v-6.735Z"/></svg>
+              </div>
+              <h3 class="dl-platform">Macha for Windows</h3>
+              <p class="dl-meta">Desktop installer &middot; Windows 10/11</p>
+              <p class="dl-copy">Floating Dynamic Island, gesture mouse support, local Whisper transcription, and global hotkeys.</p>
+              <div class="dl-action">
+                <a href="downloads/Macha.exe" download class="btn btn-coral btn-block" id="dl-exe-btn" aria-label="Download Macha.exe for Windows">
+                  <svg class="btn-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                  <span>Download Installer</span>
+                </a>
+              </div>
+              <small class="dl-helper">Note: If SmartScreen appears, click &ldquo;More info &rarr; Run anyway&rdquo;</small>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==============================================================
+       FOOTER
+  ============================================================== -->
+  <footer id="footer" class="footer">
+    <div class="footer-container">
+      
+      <div class="footer-brand-col">
+        <div class="avatar-stack mini" aria-hidden="true">
+          <div class="avatar-card av-cubee">
+            <svg viewBox="0 0 160 150" class="av-svg"><rect x="8" y="10" width="144" height="130" rx="38" fill="#E65C5C" stroke="#0A120D" stroke-width="6"/></svg>
+          </div>
+          <div class="avatar-card av-onee">
+            <svg viewBox="0 0 160 150" class="av-svg"><rect x="8" y="10" width="144" height="130" rx="42" fill="#DBE2F5" stroke="#0A120D" stroke-width="6"/></svg>
+          </div>
+          <div class="avatar-card av-macha">
+            <svg viewBox="0 0 160 150" class="av-svg"><rect x="8" y="10" width="144" height="130" rx="40" fill="#FFFDFB" stroke="#0A120D" stroke-width="6"/></svg>
+          </div>
+        </div>
+        <span class="footer-title">Macha</span>
+        <p class="footer-tagline">Your expressive AI companion &mdash; always by your side.</p>
+      </div>
+
+      <div class="footer-links-col">
+        <a href="#features" class="footer-link">Features</a>
+        <a href="#download" class="footer-link">Download</a>
+        <a href="https://github.com/dev-praj/Macha_by_Prajwal" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub Repository</a>
+      </div>
+
+      <div class="footer-meta-col">
+        <p class="footer-license">Licensed under the <a href="https://github.com/dev-praj/Macha_by_Prajwal/blob/main/android/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a></p>
+        <p class="footer-credit">Created by Prajwal</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==============================================================
+       SUBTLE FIXED WATERMARK PILL (Tasteful, cream at 60% opacity)
+  ============================================================== -->
+  <aside id="watermark" class="watermark-pill" aria-label="Creator attribution">
+    <span>Created by Prajwal</span>
+  </aside>
+
+  <!-- ==============================================================
+       TOAST NOTIFICATION (With Mini Avatar)
+  ============================================================== -->
+  <div id="toast" class="toast-container" role="status" aria-live="polite" aria-atomic="true">
+    <div class="toast-avatar" aria-hidden="true">
+      <svg viewBox="0 0 160 150" width="22" height="20">
+        <rect x="8" y="10" width="144" height="130" rx="40" fill="#FFFDFB" stroke="#0A120D" stroke-width="6"/>
+        <ellipse cx="54" cy="74" rx="13" ry="15" fill="#1A1412"/>
+        <ellipse cx="106" cy="74" rx="13" ry="15" fill="#1A1412"/>
+      </svg>
+    </div>
+    <span id="toast-msg">Download started!</span>
+  </div>
+
+  <!-- ==============================================================
+       CUSTOM CURSOR (Matcha Spotlight + Precision Ring)
+  ============================================================== -->
+  <div id="cursor-spotlight" class="cursor-spotlight" aria-hidden="true"></div>
+  <div id="cursor-ring" class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js?v=1795053970" defer></script>
+
+</body>
+</html>
