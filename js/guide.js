@@ -8,8 +8,8 @@
  */
 
 const DOWNLOADS = {
-  windows: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/Macha.exe',
-  android: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/Macha.apk',
+  windows: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/macha.exe',
+  android: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/macha.apk',
   releases: 'https://github.com/dev-praj/Macha_by_Prajwal/releases'
 };
 
