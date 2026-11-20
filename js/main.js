@@ -11,6 +11,13 @@
 'use strict';
 
 (function () {
+  // ── Central Download Links (GitHub Releases beta tag) ───────────────────
+  const DOWNLOADS = {
+    windows: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/Macha.exe',
+    android: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/Macha.apk',
+    releases: 'https://github.com/dev-praj/Macha_by_Prajwal/releases'
+  };
+
   // ── Global Coordinates & State ──────────────────────────────────────────
   let mouseX = 0, mouseY = 0;       // Normalized (-1 to +1)
   let rawMouseX = window.innerWidth / 2;
@@ -327,18 +334,38 @@
   // ── 5. Toast Notification ────────────────────────────────────────────────
   function initToast() {
     const toast = document.getElementById('toast');
-    const dlBtns = document.querySelectorAll('[download]');
+    const dlBtns = document.querySelectorAll('[data-dl="windows"], [data-dl="android"], a[download]');
     if (!toast || !dlBtns.length) return;
 
     dlBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        toast.classList.add('show');
-        setTimeout(() => toast.classList.remove('show'), 3000);
+        const href = btn.getAttribute('href');
+        if (href && href !== '#' && !href.startsWith('javascript:')) {
+          toast.classList.add('show');
+          setTimeout(() => toast.classList.remove('show'), 3500);
+        }
       });
     });
   }
 
-  // ── 6. Navbar Scroll Effect ──────────────────────────────────────────────
+  // ── 6. Download Links Synchronizer ────────────────────────────────────────
+  function initDownloadLinks() {
+    document.querySelectorAll('[data-dl="windows"]').forEach(el => {
+      el.href = DOWNLOADS.windows;
+      el.rel = 'noopener';
+    });
+    document.querySelectorAll('[data-dl="android"]').forEach(el => {
+      el.href = DOWNLOADS.android;
+      el.rel = 'noopener';
+    });
+    document.querySelectorAll('[data-dl="releases"]').forEach(el => {
+      el.href = DOWNLOADS.releases;
+      el.target = '_blank';
+      el.rel = 'noopener noreferrer';
+    });
+  }
+
+  // ── 7. Navbar Scroll Effect ──────────────────────────────────────────────
   function initNavbar() {
     const nav = document.getElementById('navbar');
     if (!nav) return;
@@ -353,6 +380,7 @@
     initStartupAnimation();
     initHeroAvatars();
     initBentoIsland();
+    initDownloadLinks();
     initToast();
     initNavbar();
   });

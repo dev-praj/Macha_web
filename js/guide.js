@@ -7,7 +7,14 @@
  * - Back to Top Smooth Scroll
  */
 
+const DOWNLOADS = {
+  windows: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/Macha.exe',
+  android: 'https://github.com/dev-praj/Macha_by_Prajwal/releases/download/beta/Macha.apk',
+  releases: 'https://github.com/dev-praj/Macha_by_Prajwal/releases'
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  initDownloadLinks();
   initScrollSpy();
   initSearch();
   initChecklist();
@@ -15,6 +22,22 @@ document.addEventListener('DOMContentLoaded', () => {
   initBackToTop();
   initAnchorLinks();
 });
+
+function initDownloadLinks() {
+  document.querySelectorAll('[data-dl="windows"]').forEach(el => {
+    el.href = DOWNLOADS.windows;
+    el.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-dl="android"]').forEach(el => {
+    el.href = DOWNLOADS.android;
+    el.rel = 'noopener';
+  });
+  document.querySelectorAll('[data-dl="releases"]').forEach(el => {
+    el.href = DOWNLOADS.releases;
+    el.target = '_blank';
+    el.rel = 'noopener noreferrer';
+  });
+}
 
 /* ── 1. Scroll-Spy Table of Contents ────────────────────────────────────── */
 function initScrollSpy() {

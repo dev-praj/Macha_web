@@ -882,6 +882,23 @@ html.loader-active body {
   margin-top: 0.5rem;
 }
 
+.hero-fallback-row {
+  margin-top: -0.25rem;
+}
+
+.dl-fallback-link {
+  display: inline-block;
+  font-size: 0.8125rem;
+  color: var(--text-dim);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--dur-fast);
+}
+
+.dl-fallback-link:hover {
+  color: var(--matcha-300);
+}
+
 .hero-notes-row {
   display: flex;
   align-items: flex-start;
